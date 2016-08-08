@@ -1,0 +1,21 @@
+{
+  "name": "react-app-rewired",
+  "version": "0.0.1",
+  "private": false,
+  "devDependencies": {
+    "react-scripts": "0.2.1",
+    "rewire": "^2.5.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.4.0",
+    "postcss-canadian-stylesheets": "0.0.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "scripts": {
+    "override": "node start"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
+  }
+}
