@@ -15,11 +15,12 @@
     "webpack": "^1.13.1"
   },
   "scripts": {
-    "start": "node _start",
-    "build": "node _build"
+    "default": "node node_modules/react-scripts/scripts/build.js",
+    "start": "node scripts/start",
+    "build": "node scripts/build"
   },
   "eslintConfig": {
-    "extends": "./node_modules/react-scripts/config/eslint.js"
+    "extends": "node_modules/react-scripts/config/eslint.js"
   },
   "repository": {
     "type": "git",

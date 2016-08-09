@@ -1,16 +1,11 @@
 process.env.NODE_ENV = 'production'
+var override = require('../config-overrides')
 
 var rimrafSync = require('rimraf').sync
 var webpack = require('webpack')
-// pull in the prod webback build
 var config = require('react-scripts/config/webpack.config.prod')
 
-// mod the PostCSS setup ... or whatever you want here
-config.postcss = function () {
-  var autoprefixer = require('autoprefixer')
-  var eh = require('postcss-canadian-stylesheets')
-  return [autoprefixer, eh]
-}
+config = override(config)
 
 var paths = require('react-scripts/config/paths')
 rimrafSync(paths.appBuild + '/*')
