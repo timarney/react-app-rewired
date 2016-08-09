@@ -1,18 +1,27 @@
 # First Things First
 
-Create React App is an amazing tool with sensible defaults.  That said **Sometimes you might need a tiny bit more i.e. canadian-stylesheets**. It would be nice to be able to modify the config without needing to 'eject' it, but that's not possible.  
+Create React App (https://github.com/facebookincubator/create-react-app) is an amazing tool with sensible defaults. 
 
-So lets hack it and get ourselves some Canadian stylesheets (or whatever else you want).
+That said, I for one would line to be able to tweak the webpack config without needing to 'eject' in turn losing all the benefits of the project (future updates etc...).
 
-Here's the css we're looking to run.
+Case in point -> **I want to add a PostCSS plugin** (canadian-stylesheets)
 
-**CSS**
+Our options:
 ```
-.App-header {
-  background-colour: salmon;
-  height: 100px;
-  padding: 20px;
-  colour: lightgrey !sorry;
+1. Abandon the dream of using canadian-stylesheets and settle for the defaults
+2. `npm run eject`
+3. Hack the Config! and get ourselves some Canadian stylesheets (or whatever else you want)
+```
+
+#Lets hack the config
+```
+module.exports = function override (config) {
+  config.postcss = function () {
+    var autoprefixer = require('autoprefixer')
+    var eh = require('postcss-canadian-stylesheets')
+    return [autoprefixer, eh]
+  }
+  return config
 }
 ```
 
@@ -20,6 +29,6 @@ Here's the css we're looking to run.
 npm run start or npm run build
 
 #Have Fun
-Modify `_start.js` or `_build.js` for production.
+Modify config-overrides.js
 
 Note: I totally understand why the project doesn't want to go this route.  Allowing custom configs would likely flood the project with unrelated issues.
