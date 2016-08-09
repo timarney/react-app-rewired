@@ -10,12 +10,20 @@
     "autoprefixer": "^6.4.0",
     "postcss-canadian-stylesheets": "0.0.1",
     "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "react-dom": "^15.2.1",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.1"
   },
   "scripts": {
-    "override": "node start"
+    "start": "node _start",
+    "build": "node _build"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timarney/react-app-rewired"
+  },
+  "license": "MIT"
 }
