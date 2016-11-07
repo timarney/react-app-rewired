@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": false,
   "devDependencies": {
+    "preact": "6.4.0",
+    "preact-compat": "3.9.1",
     "react-scripts": "0.7.0",
     "rewire": "^2.5.2"
   },
