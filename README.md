@@ -11,9 +11,9 @@ Case in point -> I want to use **Create React App** with **Preact**  (https://pr
 
 Roughy:
 
-1. The 'rewired' [scripts](https://github.com/timarney/react-app-rewired/tree/master/scripts) grab a copy of create-react-app webpack config(s) and pass it to an override function
+* The 'rewired' [scripts](https://github.com/timarney/react-app-rewired/tree/master/scripts) grab a copy of create-react-app webpack config(s) and pass it to an override function
 
-2. We setup an override function
+* We setup an override function
 ```
 //config is a copy of the create-react-app webpack config
 
@@ -31,7 +31,7 @@ module.exports = function override (config) {
 }
 ```
 
-3. package.json points to the `rewired` scripts which in turn use the react-scripts
+* `package.json` points to the `rewired` scripts which in turn use the `react-scripts`
 
  ```
  "scripts": {
