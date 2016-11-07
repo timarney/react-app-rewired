@@ -56,7 +56,7 @@ module.exports = function override (config) {
 **Other Wins**
 
 1. in this case `filesize`
-2. I can remove the **override** and flip back to React
+2. I can remove the [override](https://github.com/timarney/react-app-rewired/compare/react-compare) and flip back to React
 
 <hr>
 
