@@ -56,6 +56,9 @@ module.exports = function override (config) {
 **Other Wins**
 
 1. in this case `filesize`
+2. I can remove the **override** and flip back to React
+
+<hr>
 
 * React Version - https://build-slkyvlrtfe.now.sh 47.6 KB 
 * Preact Version - https://build-rxknelthvn.now.sh 13.2 KB
