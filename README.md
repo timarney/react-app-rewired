@@ -1,3 +1,6 @@
+# Note:
+Want to use Create React App with Preact https://preactjs.com ? Check this branch https://github.com/timarney/react-app-rewired/tree/preact
+
 # First Things First
 
 Create React App (https://github.com/facebookincubator/create-react-app) is an amazing tool with sensible defaults. 
