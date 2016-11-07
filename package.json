@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": false,
   "devDependencies": {
-    "react-scripts": "0.2.1",
+    "react-scripts": "0.7.0",
     "rewire": "^2.5.2"
   },
   "dependencies": {
