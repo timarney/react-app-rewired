@@ -31,7 +31,7 @@ module.exports = function override (config) {
 }
 ```
 
-* `package.json` points to the `rewired` scripts which in turn use the `react-scripts`
+* `package.json` points to the `rewired` [scripts](https://github.com/timarney/react-app-rewired/tree/master/scripts) which in turn use the `react-scripts`
 
  ```
  "scripts": {
@@ -51,9 +51,9 @@ module.exports = function override (config) {
 
 - So what's the point?
 
-> I can retain full access to react-create-app no fork no using a different boilerplate (i.e. Preact has a starter).  If create-react-app updates I just flip the version #
+> I can retain full access to react-create-app no fork (no eject) and no using a different boilerplate (i.e. Preact has a starter).  If create-react-app updates I just flip the version #
 
-**Other Wins**
+**Wins**
 
 1. in this case `filesize`
 2. I can remove the [override](https://github.com/timarney/react-app-rewired/compare/react-compare) and flip back to React
