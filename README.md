@@ -59,13 +59,16 @@ Note:  I'll see about writing a script to handle this 😃 .
 # Here's a few ideas to start with
 
 **Use Preact**
-https://gist.github.com/timarney/060626b717719e41be7c24aac69f9121
+* https://gist.github.com/timarney/060626b717719e41be7c24aac69f9121
 
 **Use Inferno**
-https://gist.github.com/timarney/1cdc07c9d152356b173bcefa7a3b7ec4
+* https://gist.github.com/timarney/1cdc07c9d152356b173bcefa7a3b7ec4
 
 **Use CSS Modules**
-https://gist.github.com/timarney/b4f896b78e1d7d7cde1bde0135794b34
+* https://gist.github.com/timarney/b4f896b78e1d7d7cde1bde0135794b34
+
+**Use a plugin**
+* https://github.com/timarney/rewired-style-demo (demo using styled-components + babel-plugin-styled-components-named)
 
 
 
