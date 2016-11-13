@@ -7,17 +7,21 @@ That said, I for one would line to be able to tweak the webpack config without n
 Case in point -> I want to use **Create React App** with **Preact**  (https://preactjs.com)
 
 
-#How does this work?
+# How does this work?
 
-Roughy:
+The 'rewired' [react-scripts] have been setup to call an override function (config-overrides.js) which sits in your project directory.
 
-* The 'rewired' [scripts](https://github.com/timarney/react-app-rewired/tree/master/scripts) grab a copy of create-react-app webpack config(s) and pass it to an override function
+That function receives 2 params (config, env)
 
-* We setup an override function
+* config is the webpack config from create-react-app
+* env is the Node enviroment your running
+
+
+Once you have a copy of the config you can modify it to add plugins etc...
+
+
 ```
-//config is a copy of the create-react-app webpack config
-
-module.exports = function override (config) {
+module.exports = function override (config, env) {
   //setup preact
   config.resolve = {
     "alias": {
@@ -31,54 +35,34 @@ module.exports = function override (config) {
 }
 ```
 
-* `package.json` points to the `rewired` [scripts](https://github.com/timarney/react-app-rewired/tree/master/scripts) which in turn use the `react-scripts`
+For new projects assuming create-react-app is installed run
 
- ```
- "scripts": {
-    "default": "node node_modules/react-scripts/scripts/build.js",
-    "start": "node scripts/start",
-    "build": "node scripts/build"
+`create-react-app your-app-name --scripts-version rewire-react-scripts`
+
+# Here's a few ideas to start with
+
+**Use Preact**
+https://gist.github.com/timarney/060626b717719e41be7c24aac69f9121
+
+**Use Inferno**
+https://gist.github.com/timarney/1cdc07c9d152356b173bcefa7a3b7ec4
+
+**Use CSS Modules**
+https://gist.github.com/timarney/b4f896b78e1d7d7cde1bde0135794b34
+
+# How can I use this with an existing project?
+
+You can swap out react-scripts with rewire-react-scripts in your package.json
+
+This section
+
+```
+"devDependencies": {
+    "react-scripts": "0.7.0"
   },
 ```
 
+You also need to create a config-overrides.js file in your projects root directory (see sample with this repo)
 
-#Try it
-* Clone the repo
-* Modify config-overrides.js
-* npm run start or npm run build (for production)
-
-#Demo links
-
-- So what's the point?
-
-> I can retain full access to react-create-app no fork (no eject) and no using a different boilerplate (i.e. Preact has a starter).  If create-react-app updates I just flip the version #
-
-**Wins**
-
-1. in this case `filesize`
-2. I can remove the [override](https://github.com/timarney/react-app-rewired/compare/react-compare) and flip back to React
-
-<hr>
-
-* React Version - https://build-slkyvlrtfe.now.sh 47.6 KB 
-* Preact Version - https://build-rxknelthvn.now.sh 13.2 KB
-
-Both links built with **Create React App** as a starter
-
-The only difference is I'm `overriding` (hack) the **Create React App** configs to swap from **React** to use **Preact**
-
-```
-module.exports = function override (config) {
-  // setup Preact
-  config.resolve = {
-    "alias": {
-      "react": "preact-compat",
-      "react-dom": "preact-compat"
-    }
-  }
-
-  return config
-}
-
-```
+Note:  At some point soon I'll see about writing a script to handle this
 
