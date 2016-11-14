@@ -1,0 +1,12 @@
+{
+  "name": "react-app-rewired",
+  "version": "0.0.2",
+  "private": false,
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timarney/react-app-rewired"
+  },
+  "license": "MIT"
+}
