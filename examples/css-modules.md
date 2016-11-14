@@ -2,10 +2,9 @@
 
 
 
-* [Rewire your app](https://github.com/timarney/react-app-rewired/#how-to-rewire-your-create-react-app-project)
-* Setup `config-overrides.js`
+* [Rewire your app](https://github.com/timarney/react-app-rewired/#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
-```
+```javascript
 module.exports = function override(config, env) {
   var loader = 'style!css?modules&';  
   if (env === 'development') {
@@ -23,9 +22,11 @@ module.exports = function override(config, env) {
 
 ```
 
-* Update your components 
+* **Update your components**
 
-```
+```javascript
+/* App.js */
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import styles from './App.css';
@@ -51,4 +52,4 @@ export default App;
 
 ```
 
-* npm start
+* Done -> **npm start**
