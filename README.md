@@ -9,7 +9,7 @@ Let's tweak the config.
 #How to rewire your create-react-app project
 
 * Copy the `config-overrides.js` file into your projects root directory
-* Tweak `config-overrides.js` as needed see the examples directory of this repo
+* Tweak `config-overrides.js` as needed see the (examples)[#] directory of this repo
 * Add the rewire scripts to your package.json
 ```
 "scripts": {
@@ -19,5 +19,5 @@ Let's tweak the config.
 ```
 
 #Commands
-npm run rewire:start
-npm run rewire:build
+* npm run rewire:start
+* npm run rewire:build
