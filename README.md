@@ -6,11 +6,24 @@ All the benefits of create-react-app without the limitations of "no config".  Yo
 
 #How to rewire your create-react-app project
 
-* Setup your project using [create-react-app](https://github.com/facebookincubator/create-react-app)
-* Add react-app-rewired to your project ```npm install react-app-rewired --save``` 
-* Copy the `config-overrides.js` file into the project root directory
-* Tweak `config-overrides.js` as needed see the (examples)[#] directory of this repo
-* Add the rewire scripts to your package.json
+Setup your project using [create-react-app](https://github.com/facebookincubator/create-react-app)
+
+```npm install react-app-rewired --save``` 
+
+Copy the `config-overrides.js` file into the root directory of your project
+```
++-- your-project
+|   +-- config-overrides.js
+|   +-- node_modules
+|   +-- package.json
+|   +-- public
+|   +-- README.md
+|   +-- src
+```
+
+Tweak `config-overrides.js` as needed see the [examples](/example)
+
+Add the the `npm run` scripts to your package.json
 ```
 "scripts": {
     "rewire:start": "node ./node_modules/react-app-rewired/scripts/start",
