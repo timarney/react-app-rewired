@@ -1,14 +1,14 @@
-# First Things First
+# Rewire Your App
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is an amazing tool with sensible defaults.
+Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.  
 
-That said, I for one would like to be able to tweak the webpack config without needing to 'eject' in turn losing all the benefits of the project (future updates etc...).  You could also create a fork, but syncing is no fun.
-
-Let's tweak the config.
+All the benefits of create-react-app without the limitations of "no config".  You can add plugins, loaders whatever you need.
 
 #How to rewire your create-react-app project
 
-* Copy the `config-overrides.js` file into your projects root directory
+* Setup your project using [create-react-app](https://github.com/facebookincubator/create-react-app)
+* Add react-app-rewired to your project ```npm install react-app-rewired --save``` 
+* Copy the `config-overrides.js` file into the project root directory
 * Tweak `config-overrides.js` as needed see the (examples)[#] directory of this repo
 * Add the rewire scripts to your package.json
 ```
