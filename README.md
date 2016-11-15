@@ -23,7 +23,7 @@ module.exports = function override(config, env) {
   return config;
 }
 ```
-see the [examples](/example)
+see the [examples](https://github.com/timarney/react-app-rewired/tree/master/examples)
 
 ```
 +-- your-project
