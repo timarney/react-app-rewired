@@ -1,3 +1,5 @@
+ <img alt="react-app-rewired" src="./assets/react-app-rewired.png" />
+
 # Rewire Your App
 
 Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.  
