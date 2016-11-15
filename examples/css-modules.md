@@ -1,12 +1,12 @@
-#CSS Modules 
+#CSS Modules
 
 
 
-* [Rewire your app](https://github.com/timarney/react-app-rewired/#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
+* [Rewire your app](../#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
 ```javascript
 module.exports = function override(config, env) {
-  var loader = 'style!css?modules&';  
+  var loader = 'style!css?modules&';
   if (env === 'development') {
     loader += 'importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss';
   } else {
@@ -16,7 +16,7 @@ module.exports = function override(config, env) {
   config.module.loaders.forEach(l => {
     if (String(l.test) == String(/\.css$/)) l.loader = loader
   })
-  
+
   return config;
 }
 
@@ -52,4 +52,4 @@ export default App;
 
 ```
 
-* Done -> **npm start**
+* Done -> **npm run rewire:start**
