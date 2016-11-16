@@ -53,5 +53,5 @@ export default App;
 ```
 
 ```bash
-npm run rewire:start
+$ npm run rewire:start
 ```

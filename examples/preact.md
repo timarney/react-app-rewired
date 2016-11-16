@@ -24,5 +24,5 @@ module.exports = function override(config, env) {
 ```
 
 ```bash
-npm run rewire:start
+$ npm run rewire:start
 ```

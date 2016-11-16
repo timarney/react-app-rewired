@@ -2,7 +2,7 @@
 
 **Install Inferno**
 ```bash
-npm install inferno inferno-compat --save
+$ npm install inferno inferno-compat --save
 ```
 
 * [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
@@ -23,5 +23,5 @@ module.exports = function override(config, env) {
 ```
 
 ```bash
-npm run rewire:start
+$ npm run rewire:start
 ```
