@@ -1,9 +1,13 @@
 #Preact
 
 **Install Preact**
-```npm install preact preact-compat --save```
 
-* [Rewire your app](../#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
+
+```
+$ npm install preact preact-compat --save
+```
+
+* [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
 ```javascript
 module.exports = function override(config, env) {
@@ -19,4 +23,6 @@ module.exports = function override(config, env) {
 
 ```
 
-* Done -> **npm run rewire:start**
+```bash
+npm run rewire:start
+```
