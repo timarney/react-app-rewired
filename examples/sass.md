@@ -47,4 +47,6 @@ export default App;
 
 ```
 
-* Done -> **npm run rewire:start**
+```bash
+$ npm run rewire:start
+```
