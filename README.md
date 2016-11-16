@@ -25,7 +25,7 @@ module.exports = function override(config, env) {
   return config;
 }
 ```
-see the [examples](https://github.com/timarney/react-app-rewired/tree/master/examples)
+View the [examples](https://github.com/timarney/react-app-rewired/tree/master/examples) -> CSS Modules, Preact, Inferno, Sass etc...
 
 ```
 +-- your-project
