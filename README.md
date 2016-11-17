@@ -8,6 +8,10 @@ All the benefits of create-react-app without the limitations of "no config".  Yo
 
 > All you have to do is create your app using [create-react-app](https://github.com/facebookincubator/create-react-app) and than rewire it.
 
+⚠️ **Please Note:**  
+
+> By doing this your breaking ["guarantees"](https://github.com/facebookincubator/create-react-app/issues/99#issuecomment-234657710) that CRA provides.  That is to say you now "own" the configs. **No support** will be provided.  Proceed with caution.
+
 #How to rewire your create-react-app project
 
 
