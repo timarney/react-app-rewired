@@ -4,15 +4,15 @@
 
 Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.  
 
-All the benefits of create-react-app without the limitations of "no config".  You can add plugins, loaders whatever you need.
+All the benefits of create-react-app without the limitations of "no config". You can add plugins, loaders whatever you need.
 
-> All you have to do is create your app using [create-react-app](https://github.com/facebookincubator/create-react-app) and than rewire it.
+> All you have to do is create your app using [create-react-app](https://github.com/facebookincubator/create-react-app) and then rewire it.
 
 ⚠️ **Please Note:**  
 
-> By doing this your breaking ["guarantees"](https://github.com/facebookincubator/create-react-app/issues/99#issuecomment-234657710) that CRA provides.  That is to say you now "own" the configs. **No support** will be provided.  Proceed with caution.
+> By doing this you're breaking the ["guarantees"](https://github.com/facebookincubator/create-react-app/issues/99#issuecomment-234657710) that CRA provides. That is to say you now "own" the configs. **No support** will be provided. Proceed with caution.
 
-#How to rewire your create-react-app project
+# How to rewire your create-react-app project
 
 
 #### 1) Install react-app-rewired 
