@@ -3,7 +3,14 @@
   "version": "0.0.4",
   "description": "Configure the unconfigurable, override create-react-app webpack configs",
   "private": false,
-  "devDependencies": {},
+  "bin": {
+    "react-app-rewired": "./bin/index.js"
+   },
+  "devDependencies": {
+    "cross-spawn": "5.0.1",
+    "install": "0.8.2",
+    "npm": "4.0.2"
+  },
   "dependencies": {},
   "repository": {
     "type": "git",
