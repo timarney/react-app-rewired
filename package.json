@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewired",
-  "version": "0.0.4",
+  "version": "1.0.0-alpha.1",
   "description": "Configure the unconfigurable, override create-react-app webpack configs",
   "private": false,
   "bin": {
