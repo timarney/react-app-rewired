@@ -1,17 +1,15 @@
 {
   "name": "react-app-rewired",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Configure the unconfigurable, override create-react-app webpack configs",
   "private": false,
   "bin": {
     "react-app-rewired": "./bin/index.js"
-   },
-  "devDependencies": {
-    "cross-spawn": "5.0.1",
-    "install": "0.8.2",
-    "npm": "4.0.2"
   },
-  "dependencies": {},
+  "devDependencies": {},
+  "dependencies": {
+    "cross-spawn": "5.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/timarney/react-app-rewired"
