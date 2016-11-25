@@ -2,7 +2,6 @@
 
 **Install Preact**
 
-
 ```
 $ npm install preact preact-compat --save
 ```
@@ -24,5 +23,5 @@ module.exports = function override(config, env) {
 ```
 
 ```bash
-$ npm run rewire:start
+$ npm start
 ```
