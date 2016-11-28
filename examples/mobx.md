@@ -1,15 +1,22 @@
 #MobX using decorators
 
-**Install MobX**
+#### 1) Install MobX
 
 ```bash
 $ npm install mobx mobx-react --save
 ```
 
-**Install legacy decorators**
-npm install babel-plugin-transform-decorators-legacy --save-dev
+#### 2) Install legacy decorators
 
-* [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
+```bash
+npm install babel-plugin-transform-decorators-legacy --save-dev
+```
+
+
+#### 3) [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) 
+
+
+#### 4) modify `config-overrides.js`
 
 ```javascript
 module.exports = function override(config, env) {
@@ -20,7 +27,7 @@ module.exports = function override(config, env) {
 
 ```
 
-* **Update your components to use MobX**
+#### 5) Update your components to use MobX
 
 
 ```javascript
@@ -56,7 +63,7 @@ export default App;
 
 ```
 
-
+#### 6) Fire it up
 ```bash
 $ npm start
 ```
