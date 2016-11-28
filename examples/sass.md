@@ -14,6 +14,8 @@ module.exports = function override(config, env) {
     test: /\.scss$/,
     loaders: ["style", "css", "sass"]
   });
+  
+  return config;
 }
 
 ```
