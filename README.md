@@ -29,7 +29,7 @@ module.exports = function override(config, env) {
   return config;
 }
 ```
-View the [examples](https://github.com/timarney/react-app-rewired/tree/master/examples) -> CSS Modules, Preact, Inferno, Sass etc...
+View the [examples](https://github.com/timarney/react-app-rewired/tree/master/examples) -> MobX using decorators, CSS Modules, Preact, Inferno, Sass etc...
 
 ```
 +-- your-project
@@ -61,3 +61,11 @@ $ npm start
 ```bash
 $ npm run build
 ```
+
+#Contribute
+
+If you would like to contribute examples / use cases please submit a PR that follows the other [examples](https://github.com/timarney/react-app-rewired/tree/master/examples)
+
+#More Info - on Why this project exists.
+
+See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
