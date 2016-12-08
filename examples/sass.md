@@ -10,9 +10,12 @@ $ npm install sass-loader node-sass webpack --save-dev
 
 ```javascript
 module.exports = function override(config, env) {
+  config.module.loaders.find(conf => conf.loader === 'url').exclude.push(/\.scss$/);
+
+  let sassLoader = (env === 'development') ? 'style!css!sass' : ExtractTextPlugin.extract('style', 'css!sass');
   config.module.loaders.push({
     test: /\.scss$/,
-    loaders: ["style", "css", "sass"]
+    loader: sassLoader
   });
   
   return config;
@@ -27,7 +30,7 @@ module.exports = function override(config, env) {
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
-require("./App.scss");
+import './App.scss';
 
 class App extends Component {
   render() {
