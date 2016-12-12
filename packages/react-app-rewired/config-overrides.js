@@ -7,9 +7,9 @@ module.exports = function override(config, env) {
     loader += '-autoprefixer&importLoaders=1!postcss';
   }
   // Find the right loader then patch its 'loader' property
-  config.module.loaders.forEach(l => {
+  config.module.loaders.forEach((l => {
     if (String(l.test) == String(/\.css$/)) l.loader = loader
-  })
+  }));
  
   return config;
-}
+};
