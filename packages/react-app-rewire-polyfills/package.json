@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewire-polyfills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "rewire your react-app and use all babel-polyfill offers",
   "main": "index.js",
   "scripts": {
