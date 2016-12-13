@@ -30,22 +30,21 @@ module.exports = function override(config, env) {
 }
 ```
 
-You can use one of the default rewires:
+**Note: You can use one of the default rewires:**
+
+```bash
+$ npm install --save react-app-rewire-sass
+```
 
 ```javascript
 const rewireSass = require('react-app-rewire-sass');
-const rewireRelay = require('react-app-rewire-relay');
 
 /* config-overrides.js */
 module.exports = function override(config, env) {
   config = rewireSass(config, env);
-  config = rewireRelay(config, env);
-  
   return config;
 }
 ```
-
-View the [examples](https://github.com/timarney/react-app-rewired/tree/master/examples) -> MobX using decorators, CSS Modules, Preact, Inferno, Sass etc...
 
 ```
 +-- your-project
