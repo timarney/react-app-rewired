@@ -30,7 +30,17 @@ module.exports = function override(config, env) {
 }
 ```
 
-**Note: You can use one of the default rewires:**
+```
++-- your-project
+|   +-- config-overrides.js
+|   +-- node_modules
+|   +-- package.json
+|   +-- public
+|   +-- README.md
+|   +-- src
+```
+
+**Note: You can use one of the default rewires (see the packages dir):**
 
 ```bash
 $ npm install --save react-app-rewire-sass
@@ -44,16 +54,6 @@ module.exports = function override(config, env) {
   config = rewireSass(config, env);
   return config;
 }
-```
-
-```
-+-- your-project
-|   +-- config-overrides.js
-|   +-- node_modules
-|   +-- package.json
-|   +-- public
-|   +-- README.md
-|   +-- src
 ```
 
 #### 3) 'Flip' the existing the `npm run` scripts for start and build
