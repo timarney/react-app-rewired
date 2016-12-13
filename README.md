@@ -33,7 +33,8 @@ module.exports = function override(config, env) {
 You can use one of the default rewires:
 
 ```javascript
-const { rewireSass, rewireRelay } = require('react-app-rewired/rewires');
+const rewireSass = require('react-app-rewire-sass');
+const rewireRelay = require('react-app-rewire-relay');
 
 /* config-overrides.js */
 module.exports = function override(config, env) {

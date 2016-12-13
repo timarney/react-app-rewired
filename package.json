@@ -1,21 +1,9 @@
 {
-  "name": "react-app-rewired",
-  "version": "0.1.0",
-  "description": "Configure the unconfigurable, override create-react-app webpack configs",
-  "private": false,
-  "bin": {
-    "react-app-rewired": "./bin/index.js"
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna bootstrap"
   },
-  "devDependencies": {},
-  "peerDependencies": {
-    "react-scripts": "^0.8.3"
-  },
-  "dependencies": {
-    "cross-spawn": "5.0.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/timarney/react-app-rewired"
-  },
-  "license": "MIT"
+  "devDependencies": {
+    "lerna": "2.0.0-beta.30"
+  }
 }
