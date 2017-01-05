@@ -1,4 +1,4 @@
- <img alt="react-app-rewired" src="./assets/react-app-rewired.png" />
+ <img alt="react-app-rewired" src="https://github.com/timarney/react-app-rewired/raw/master/assets/react-app-rewired.png" />
 
 # Rewire Your App
 
