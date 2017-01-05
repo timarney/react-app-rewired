@@ -1,4 +1,4 @@
-#Rewire create-react-app to use SASS
+#Rewire create-react-app to use SASS!
 
 
 #Install
