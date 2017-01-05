@@ -4,6 +4,7 @@ const babelLoader = function (conf) {
 
 function rewireMobX(config, env) {
   const babelrc = config.module.loaders.find(babelLoader).query;
+  babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
   return config;
 }
 
