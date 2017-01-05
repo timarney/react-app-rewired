@@ -1,10 +1,10 @@
-#Rewire create-react-app to use SASS
+#Rewire create-react-app to use MobX
 
 
 #Install
 
 ```bash
-$ npm install --save react-app-rewire-sass
+$ npm install --save react-app-rewire-mobx
 ```
 
 #Add it to your project
@@ -12,11 +12,11 @@ $ npm install --save react-app-rewire-sass
 * [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
 ```javascript
-const rewireSass = require('react-app-rewire-sass');
+const rewireMobX = require('react-app-rewire-mobx');
 
 /* config-overrides.js */
 module.exports = function override(config, env) {
-  config = rewireSass(config, env);
+  config = rewireMobX(config, env);
   return config;
 }
 ```

@@ -1,10 +1,10 @@
-#Rewire create-react-app to use SASS
+#Rewire create-react-app to use Preact
 
 
 #Install
 
 ```bash
-$ npm install --save react-app-rewire-sass
+$ npm install --save react-app-rewire-preact
 ```
 
 #Add it to your project
@@ -12,11 +12,11 @@ $ npm install --save react-app-rewire-sass
 * [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
 ```javascript
-const rewireSass = require('react-app-rewire-sass');
+const rewirePreact = require('react-app-rewire-preact');
 
 /* config-overrides.js */
 module.exports = function override(config, env) {
-  config = rewireSass(config, env);
+  config = rewirePreact(config, env);
   return config;
 }
 ```
