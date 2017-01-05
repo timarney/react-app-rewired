@@ -1,7 +1,11 @@
+const babelLoader = function (conf) {
+  return conf.loader === 'babel';
+};
+
 function rewireMobX(config, env) {
-  //add legacy decorators
-  config.module.loaders[0].query.plugins =  ['transform-decorators-legacy'];
+  const babelrc = config.module.loaders.find(babelLoader).query;
+  babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
   return config;
 }
 
-module.exports = rewireMobx;
+module.exports = rewireMobX;
