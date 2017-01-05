@@ -3,10 +3,12 @@ process.env.NODE_ENV = 'production';
 
 const fs = require('fs');
 const path = require('path');
-const config = require('react-scripts/config/webpack.config.prod');
-const override = require(path.resolve(fs.realpathSync(process.cwd()) + '/config-overrides'));
+const paths = require('../config/paths');
+const webpackConfig = paths.scriptVersionDir + '/config/webpack.config.prod';
+const config = require(webpackConfig);
+const override = require(paths.projectDir + '/config-overrides');
 
-require.cache[require.resolve('react-scripts/config/webpack.config.prod')].exports =
+require.cache[require.resolve(webpackConfig)].exports =
   override(config, process.env.NODE_ENV);
 
-require('react-scripts/scripts/build');
+require(paths.scriptVersionDir + '/scripts/build');
