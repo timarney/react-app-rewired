@@ -1,15 +1,13 @@
-#Rewire create-react-app to use Preact
+Create your React app using `create-react-app my-app` or use an CRA app
 
 
-#Install
-
+#Rewire it
+####1) Install react-app-rewired + react-app-rewire-preact
 ```bash
-$ npm install --save react-app-rewire-preact
+npm install react-app-rewired react-app-rewire-preact --save
 ```
 
-#Add it to your project
-
-* [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
+#### 2) Create a config-overrides.js file in the root directory
 
 ```javascript
 const rewirePreact = require('react-app-rewire-preact');
@@ -19,4 +17,30 @@ module.exports = function override(config, env) {
   config = rewirePreact(config, env);
   return config;
 }
+
 ```
+**Sample Structure**
+```
++-- your-project
+|   +-- config-overrides.js
+|   +-- node_modules
+|   +-- package.json
+|   +-- public
+|   +-- README.md
+|   +-- src
+```
+
+#### 3) 'Flip' the existing the npm run scripts for start and build
+```
+/* package.json */
+
+"scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build"
+  }
+```
+#### 4) Start the Dev Server
+
+```bash
+$ npm run build
+```  
