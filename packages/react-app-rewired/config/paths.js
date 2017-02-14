@@ -13,10 +13,24 @@ var path = require('path');
 var fs = require('fs');
 
 
-const scriptVersion = process.argv[2] || 'react-scripts';
+//try to detect if user is using a custom scripts version
+let custom_scripts = Object
+    .keys(process.argv)
+    .filter(key => {
+      if(process.argv[key].indexOf("--scripts-version") ==-1) return false;
+
+      return process.argv[key];
+    });
+
+
+if(custom_scripts){
+  custom_scripts = process.argv[custom_scripts];
+}
+
+
+const scriptVersion = custom_scripts || 'react-scripts';
 const projectDir = path.resolve(fs.realpathSync(process.cwd()));
 const scriptVersionDir = path.join(projectDir, 'node_modules', scriptVersion);
-
 
 
 // Make sure any symlinks in the project folder are resolved:
