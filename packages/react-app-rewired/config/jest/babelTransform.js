@@ -10,10 +10,11 @@ const babelJest = require('babel-jest');
 
 const customPlugins = []
 try {
-    console.log(require.resolve("transform-decorators-legacy"));
-    customPlugins.push("transform-decorators-legacy")
+    require.resolve('babel-plugin-transform-decorators-legacy');
+    customPlugins.push("babel-plugin-transform-decorators-legacy");
+    console.log("Rewired ⚡ using babel-plugin-transform-decorators-legacy");
 } catch(e) {
-    console.error("transform-decorators-legacy not found");
+    console.log("Rewired 😞 babel-plugin-transform-decorators-legacy not found");
 }
 
 module.exports = babelJest.createTransformer({
