@@ -12,9 +12,9 @@ const customPlugins = []
 try {
     require.resolve('babel-plugin-transform-decorators-legacy');
     customPlugins.push("babel-plugin-transform-decorators-legacy");
-    console.log("Rewired ⚡ using babel-plugin-transform-decorators-legacy");
+    console.log("⚡ Rewired added babel-plugin-transform-decorators-legacy");
 } catch(e) {
-    console.log("Rewired 😞 babel-plugin-transform-decorators-legacy not found");
+    //do nothing plugin not found
 }
 
 module.exports = babelJest.createTransformer({
