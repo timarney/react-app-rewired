@@ -1,9 +1,10 @@
 const babelLoader = function (conf) {
-  return conf.loader === 'babel';
+  return conf.loader === 'babel-loader';
 };
 
+//webpack2
 function rewireMobX(config, env) {
-  const babelrc = config.module.loaders.find(babelLoader).query;
+  const babelrc = config.module.rules.find(babelLoader).options;
   babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
   return config;
 }

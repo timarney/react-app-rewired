@@ -14,7 +14,7 @@ var fs = require('fs');
 
 
 //try to detect if user is using a custom scripts version
-let custom_scripts = Object
+var custom_scripts = Object
     .keys(process.argv)
     .filter(key => {
       if(process.argv[key].indexOf("--scripts-version") ==-1) return false;
