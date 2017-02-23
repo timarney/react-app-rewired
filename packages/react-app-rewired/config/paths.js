@@ -16,7 +16,7 @@ var fs = require('fs');
 //try to detect if user is using a custom scripts version
 var custom_scripts = process.argv.indexOf('--scripts-version');
 
-if(custom_scripts > -1 && custom_scripts <= process.argv.length){
+if(custom_scripts > -1 && custom_scripts + 1 <= process.argv.length){
   custom_scripts = process.argv[custom_scripts + 1];
 }
 
