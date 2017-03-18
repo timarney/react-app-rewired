@@ -1,6 +1,6 @@
 # Rewire create-react-app to use LESS!
 
-You might not need this rewire, Create React App added guide about how to add Less support to CRA without the need of ejecting. See [Adding a CSS Preprocessor] section of CRA guide. Also note, that their solution is based on compiling Less without using Webpack.
+You might not need this rewire, Create React App added guide about how to add Less support to CRA without the need of ejecting. See [Adding a CSS Preprocessor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc) section of CRA guide. Also note, that their solution is based on compiling Less without using Webpack.
 
 # Install
 
