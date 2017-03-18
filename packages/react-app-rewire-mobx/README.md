@@ -1,13 +1,12 @@
-#Rewire create-react-app to use MobX
+# Rewire create-react-app to use MobX
 
-
-#Install
+# Install
 
 ```bash
 $ npm install --save react-app-rewire-mobx
 ```
 
-#Add it to your project
+# Add it to your project
 
 * [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 

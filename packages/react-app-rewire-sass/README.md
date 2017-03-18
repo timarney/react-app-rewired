@@ -1,19 +1,16 @@
-
-#Deprecated
+# Deprecated
 
 This package has been deprecated as Create React App has [documented instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc) on how to setup without ejecting.
 
+# Rewire create-react-app to use SASS!
 
-#Rewire create-react-app to use SASS!
-
-
-#Install
+# Install
 
 ```bash
 $ npm install --save react-app-rewire-sass
 ```
 
-#Add it to your project
+# Add it to your project
 
 * [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
