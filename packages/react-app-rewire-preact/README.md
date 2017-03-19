@@ -1,8 +1,9 @@
 Create your React app using `create-react-app my-app` or use an CRA app
 
+# Rewire it
 
-#Rewire it
-####1) Install react-app-rewired + react-app-rewire-preact
+#### 1) Install react-app-rewired + react-app-rewire-preact
+
 ```bash
 npm install react-app-rewired react-app-rewire-preact --save
 ```
@@ -17,9 +18,10 @@ module.exports = function override(config, env) {
   config = rewirePreact(config, env);
   return config;
 }
-
 ```
+
 **Sample Structure**
+
 ```
 +-- your-project
 |   +-- config-overrides.js
@@ -31,6 +33,7 @@ module.exports = function override(config, env) {
 ```
 
 #### 3) 'Flip' the existing the npm run scripts for start and build
+
 ```
 /* package.json */
 
@@ -39,8 +42,9 @@ module.exports = function override(config, env) {
     "build": "react-app-rewired build"
   }
 ```
+
 #### 4) Start the Dev Server
 
 ```bash
 $ npm run build
-```  
+```
