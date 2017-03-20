@@ -5,7 +5,6 @@
     "publish": "lerna publish && lerna-npm-readme-hack"
   },
   "devDependencies": {
-    "lerna": "2.0.0-beta.32",
-    "lerna-npm-readme-hack": "1.0.6"
+    "lerna": "2.0.0-beta.32"
   }
 }
