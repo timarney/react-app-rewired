@@ -2,10 +2,10 @@ function rewireLess (config, env, lessLoaderOptions = {}) {
   const lessExtension = /\.less$/;
 
   config.module.rules
-    .find(m => m.loader === 'file-loader')
+    .find(rule => rule.loader === 'file-loader')
     .exclude.push(lessExtension);
 
-  const cssRules = config.module.rules.find(m => String(m.test) === String(/\.css$/));
+  const cssRules = config.module.rules.find(rule => String(rule.test) === String(/\.css$/));
 
   let lessRules;
   if (env === 'production') {
@@ -33,7 +33,6 @@ function rewireLess (config, env, lessLoaderOptions = {}) {
     };
   } else {
     const cssLoaders = cssRules.use;
-
     if (!cssLoaders || cssLoaders.length !== 3) {
       throw new Error('Unexpected CRA CSS loaders configuration');
     }
