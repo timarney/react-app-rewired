@@ -19,3 +19,8 @@ module.exports = function override(config, env) {
   return config;
 }
 ```
+
+# Notes
+
+* [Remove experimentalDecorators warning in VSCode](https://ihatetomatoes.net/how-to-remove-experimentaldecorators-warning-in-vscode)
+
