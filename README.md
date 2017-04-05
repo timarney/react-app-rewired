@@ -63,7 +63,7 @@ module.exports = function override(config, env) {
 "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom"
   }
 ```
 
