@@ -17,7 +17,7 @@ All the benefits of create-react-app without the limitations of "no config". You
 
 #### 1) Install react-app-rewired
 ```bash
-$ npm install react-app-rewired --save
+$ npm install react-app-rewired --save-dev
 ```
 
 #### 2) Create a `config-overrides.js` file in the root directory
