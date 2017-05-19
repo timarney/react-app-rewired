@@ -1,16 +1,16 @@
 {
   "name": "react-app-rewired",
-  "version": "0.6.5",
+  "version": "1.0.0",
   "description": "Configure the unconfigurable, override create-react-app webpack configs",
   "private": false,
   "bin": {
     "react-app-rewired": "./bin/index.js"
   },
   "peerDependencies": {
-    "react-scripts": "^0.9.0"
+    "react-scripts": "^1.0.0"
   },
   "dependencies": {
-    "cross-spawn": "5.0.1",
+    "cross-spawn": "^5.1.0",
     "dotenv": "^4.0.0"
   },
   "repository": {
