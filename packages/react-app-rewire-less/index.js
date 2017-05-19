@@ -1,18 +1,56 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+function rewireLess (config, env, lessLoaderOptions = {}) {
+  const lessExtension = /\.less$/;
 
-const urlLoader = function (conf) {
-  return conf.loader === 'url';
-};
+  config.module.rules
+    .find(rule => rule.loader === 'file-loader')
+    .exclude.push(lessExtension);
 
-function rewireLess (config, env) {
-  config.module.loaders.find(urlLoader).exclude.push(/\.less$/);
+  const cssRules = config.module.rules.find(rule => String(rule.test) === String(/\.css$/));
 
-  config.module.loaders.push({
-    test: /\.less$/,
-    loader: (env === 'development')
-      ? 'style!css!less'
-      : ExtractTextPlugin.extract('style', 'css!less')
-  });
+  let lessRules;
+  if (env === 'production') {
+    const cssLoaders = cssRules.loader;
+    if (!cssLoaders || cssLoaders.length !== 4) {
+      throw new Error('Unexpected CRA CSS loaders configuration');
+    }
+
+    const [
+      extractTextLoader,
+      styleLoader,
+      cssLoader,
+      postCssLoader
+    ] = cssLoaders;
+
+    lessRules = {
+      test: lessExtension,
+      loader: [
+        extractTextLoader,
+        styleLoader,
+        cssLoader,
+        { loader: 'less-loader', options: lessLoaderOptions },
+        postCssLoader
+      ]
+    };
+  } else {
+    const cssLoaders = cssRules.use;
+    if (!cssLoaders || cssLoaders.length !== 3) {
+      throw new Error('Unexpected CRA CSS loaders configuration');
+    }
+
+    const [styleLoader, cssLoader, postCssLoader] = cssLoaders;
+
+    lessRules = {
+      test: lessExtension,
+      use: [
+        styleLoader,
+        cssLoader,
+        { loader: 'less-loader', options: lessLoaderOptions },
+        postCssLoader
+      ]
+    };
+  }
+
+  config.module.rules.push(lessRules);
 
   return config;
 }
