@@ -1,51 +1,32 @@
 function rewireLess (config, env, lessLoaderOptions = {}) {
   const lessExtension = /\.less$/;
 
-  config.module.rules
-    .find(rule => rule.loader === 'file-loader')
-    .exclude.push(lessExtension);
+  const fileLoader = config.module.rules
+    .find(rule => rule.loader && rule.loader.endsWith('/file-loader/index.js'));
+  fileLoader.exclude.push(lessExtension);
 
-  const cssRules = config.module.rules.find(rule => String(rule.test) === String(/\.css$/));
+  const cssRules = config.module.rules
+    .find(rule => String(rule.test) === String(/\.css$/));
 
   let lessRules;
   if (env === 'production') {
-    const cssLoaders = cssRules.loader;
-    if (!cssLoaders || cssLoaders.length !== 4) {
-      throw new Error('Unexpected CRA CSS loaders configuration');
-    }
-
-    const [
-      extractTextLoader,
-      styleLoader,
-      cssLoader,
-      postCssLoader
-    ] = cssLoaders;
-
     lessRules = {
       test: lessExtension,
       loader: [
-        extractTextLoader,
-        styleLoader,
-        cssLoader,
-        { loader: 'less-loader', options: lessLoaderOptions },
-        postCssLoader
+        // TODO: originally this part is wrapper in extract-text-webpack-plugin
+        //       which we cannot do, so some things like relative publicPath
+        //       will not work.
+        //       https://github.com/timarney/react-app-rewired/issues/33
+        ...cssRules.loader,
+        { loader: 'less-loader', options: lessLoaderOptions }
       ]
     };
   } else {
-    const cssLoaders = cssRules.use;
-    if (!cssLoaders || cssLoaders.length !== 3) {
-      throw new Error('Unexpected CRA CSS loaders configuration');
-    }
-
-    const [styleLoader, cssLoader, postCssLoader] = cssLoaders;
-
     lessRules = {
       test: lessExtension,
       use: [
-        styleLoader,
-        cssLoader,
-        { loader: 'less-loader', options: lessLoaderOptions },
-        postCssLoader
+        ...cssRules.use,
+        { loader: 'less-loader', options: lessLoaderOptions }
       ]
     };
   }
