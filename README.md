@@ -78,6 +78,6 @@ $ npm start
 $ npm run build
 ```
 
-#More Info - on Why this project exists.
+# Why This Project Exists
 
 See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
