@@ -31,7 +31,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
     testURL: 'http://localhost',
     transform: {
       '^.+\\.(js|jsx)$': isEjecting ?
-        '<rootDir>/node_modules/babel-jest'
+        process.env.NODE_PATH ? `${process.env.NODE_PATH}/babel-jest` : '<rootDir>/node_modules/babel-jest'
         : resolve('config/jest/babelTransform.js'),
       '^.+\\.css$': resolve(paths.scriptVersionDir+'/config/jest/cssTransform.js'),
       '^(?!.*\\.(js|jsx|css|json)$)': resolve(paths.scriptVersionDir+'/config/jest/fileTransform.js'),
