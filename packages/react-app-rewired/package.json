@@ -7,7 +7,7 @@
     "react-app-rewired": "./bin/index.js"
   },
   "peerDependencies": {
-    "react-scripts": "^1.0.0"
+    "react-scripts": "^1.0.6"
   },
   "dependencies": {
     "cross-spawn": "^5.1.0",
