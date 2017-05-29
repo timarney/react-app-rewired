@@ -25,7 +25,7 @@ if(custom_scripts > -1 && custom_scripts + 1 <= process.argv.length){
 
 const scriptVersion = custom_scripts || 'react-scripts';
 const projectDir = path.resolve(fs.realpathSync(process.cwd()));
-const scriptVersionDir = process.env.NODE_PATH ? path.join(process.env.NODE_PATH, scriptVersion) : path.join(projectDir, 'node_modules', scriptVersion);
+const scriptVersionDir = path.join(projectDir, 'node_modules', scriptVersion);
 
 
 // Make sure any symlinks in the project folder are resolved:
