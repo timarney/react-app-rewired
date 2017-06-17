@@ -1,0 +1,16 @@
+{
+  "name": "react-app-rewire-styled-components",
+  "version": "1.0.0",
+  "description": "rewire your react-app and use styled-components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.1.4"
+  },
+  "peerDependencies": {
+    "styled-components": "2.x"
+  }
+}
