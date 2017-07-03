@@ -78,6 +78,12 @@ $ npm start
 $ npm run build
 ```
 
+# Community Maintained Rewires
+
+[react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components/blob/master/README.md) @mxstbr
+
 # Why This Project Exists
 
 See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
+
+
