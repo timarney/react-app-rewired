@@ -3,7 +3,7 @@ const babelLoader = function(conf) {
   return conf.loader.indexOf("babel-loader") > -1;
 };
 
-const injectBabelPlugin = function(config, pluginName) {
+const injectBabelPlugin = function(pluginName, config) {
   const babelrc = config.module.rules.find(babelLoader).options;
   babelrc.plugins = [pluginName].concat(babelrc.plugins || []);
   return config;
