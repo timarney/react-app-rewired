@@ -46,14 +46,14 @@ module.exports = function override(config, env) {
 $ npm install --save react-app-rewire-sass
 ```
 
-```javascript
-const rewireSass = require('react-app-rewire-sass');
+```diff
++  const rewireSass = require('react-app-rewire-sass');
 
-/* config-overrides.js */
-module.exports = function override(config, env) {
-  config = rewireSass(config, env);
-  return config;
-}
+  /* config-overrides.js */
+  module.exports = function override(config, env) {
++   config = rewireSass(config, env);
+    return config;
+  }
 ```
 
 #### 3) 'Flip' the existing the `npm run` scripts for start and build
