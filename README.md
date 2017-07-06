@@ -57,13 +57,16 @@ $ npm install --save react-app-rewire-sass
 ```
 
 #### 3) 'Flip' the existing `npm run` scripts for start and build
-```json
-/* package.json */
+```diff
+  /* package.json */
 
-"scripts": {
-  "start": "react-app-rewired start",
-  "build": "react-app-rewired build",
-  "test": "react-app-rewired test --env=jsdom"
+  "scripts": {
+-   "start": "react-scripts start",
++   "start": "react-app-rewired start",
+-   "build": "react-scripts build",
++   "build": "react-app-rewired build",
+-   "test": "react-scripts test --env=jsdom",
++   "test": "react-app-rewired test --env=jsdom"
 }
 ```
 
