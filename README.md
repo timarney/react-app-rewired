@@ -56,7 +56,7 @@ $ npm install --save react-app-rewire-sass
   }
 ```
 
-#### 3) 'Flip' the existing `npm run` scripts for start and build
+#### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts
 ```diff
   /* package.json */
 
