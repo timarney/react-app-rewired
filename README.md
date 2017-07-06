@@ -40,7 +40,7 @@ module.exports = function override(config, env) {
 |   +-- src
 ```
 
-**Note: You can use one of the default rewires (see the packages dir):**
+**Note: You can use one of the default rewires (see the [packages](/packages) dir):**
 
 ```bash
 $ npm install --save react-app-rewire-sass
