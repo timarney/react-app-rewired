@@ -61,10 +61,10 @@ $ npm install --save react-app-rewire-sass
 /* package.json */
 
 "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom"
-  }
+  "start": "react-app-rewired start",
+  "build": "react-app-rewired build",
+  "test": "react-app-rewired test --env=jsdom"
+}
 ```
 
 #### 4) Start the Dev Server
