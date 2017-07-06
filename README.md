@@ -24,6 +24,7 @@ $ npm install react-app-rewired --save-dev
 
 ```javascript
 /* config-overrides.js */
+
 module.exports = function override(config, env) {
   //do stuff with the webpack config...
   return config;
@@ -47,9 +48,10 @@ $ npm install --save react-app-rewire-sass
 ```
 
 ```diff
+/* config-overrides.js */
+
 +  const rewireSass = require('react-app-rewire-sass');
 
-  /* config-overrides.js */
   module.exports = function override(config, env) {
 +   config = rewireSass(config, env);
     return config;
