@@ -24,6 +24,7 @@ $ npm install react-app-rewired --save-dev
 
 ```javascript
 /* config-overrides.js */
+
 module.exports = function override(config, env) {
   //do stuff with the webpack config...
   return config;
@@ -40,31 +41,35 @@ module.exports = function override(config, env) {
 |   +-- src
 ```
 
-**Note: You can use one of the default rewires (see the packages dir):**
+**Note: You can use one of the default rewires (see the [packages](/packages) dir):**
 
 ```bash
 $ npm install --save react-app-rewire-sass
 ```
 
-```javascript
-const rewireSass = require('react-app-rewire-sass');
-
+```diff
 /* config-overrides.js */
-module.exports = function override(config, env) {
-  config = rewireSass(config, env);
-  return config;
-}
+
++  const rewireSass = require('react-app-rewire-sass');
+
+  module.exports = function override(config, env) {
++   config = rewireSass(config, env);
+    return config;
+  }
 ```
 
-#### 3) 'Flip' the existing the `npm run` scripts for start and build
-```json
-/* package.json */
+#### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts
+```diff
+  /* package.json */
 
-"scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom"
-  }
+  "scripts": {
+-   "start": "react-scripts start",
++   "start": "react-app-rewired start",
+-   "build": "react-scripts build",
++   "build": "react-app-rewired build",
+-   "test": "react-scripts test --env=jsdom",
++   "test": "react-app-rewired test --env=jsdom"
+}
 ```
 
 #### 4) Start the Dev Server
