@@ -3,7 +3,7 @@
 # Install
 
 ```bash
-$ npm install --save react-app-rewire-mobx
+$ npm install --save mobx mobx-react react-app-rewire-mobx
 ```
 
 # Add it to your project

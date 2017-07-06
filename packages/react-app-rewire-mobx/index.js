@@ -1,12 +1,7 @@
-const babelLoader = function (conf) {
-  return conf.loader === 'babel-loader';
-};
+const {injectBabelPlugin} = require('react-app-rewired');
 
-//webpack2
 function rewireMobX(config, env) {
-  const babelrc = config.module.rules.find(babelLoader).options;
-  babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
-  return config;
+  return injectBabelPlugin('transform-decorators-legacy', config);
 }
 
 module.exports = rewireMobX;
