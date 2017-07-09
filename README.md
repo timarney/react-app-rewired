@@ -87,6 +87,8 @@ $ npm run build
 
 [react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components/blob/master/README.md) @mxstbr
 
+[react-app-rewire-create-react-library](https://github.com/osdevisnot/react-app-rewire-create-react-library) @osdevisnot
+
 # Why This Project Exists
 
 See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
