@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
-  "dependencies": {
-    "preact": "^8.1.0",
-    "preact-compat": "^3.16.0"
+  "peerDependencies": {
+    "preact": "<=8.1.0",
+    "preact-compat": "<=3.16.0"
   }
 }

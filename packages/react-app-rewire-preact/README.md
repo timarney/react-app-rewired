@@ -5,7 +5,7 @@ Create your React app using `create-react-app my-app` or use an CRA app
 #### 1) Install react-app-rewired + react-app-rewire-preact
 
 ```bash
-npm install react-app-rewired react-app-rewire-preact --save
+npm install preact preact-compat react-app-rewired react-app-rewire-preact --save
 ```
 
 #### 2) Create a config-overrides.js file in the root directory
