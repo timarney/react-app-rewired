@@ -87,6 +87,8 @@ $ npm run build
 
 [react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components/blob/master/README.md) @mxstbr
 
+[react-app-rewire-emotion](https://github.com/osdevisnot/react-app-rewire-emotion) @osdevisnot
+
 [react-app-rewire-create-react-library](https://github.com/osdevisnot/react-app-rewire-create-react-library) @osdevisnot
 
 # Why This Project Exists
