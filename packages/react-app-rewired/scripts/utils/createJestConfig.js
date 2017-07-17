@@ -57,7 +57,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
       if(config[key]) {
         if(typeof overrides[key] === 'string') {
           config[key] = overrides[key];
-        } else if(Array.isArray(typeof overrides[key])) {
+        } else if(Array.isArray(overrides[key])) {
           config[key] = overrides[key].concat(config[key]);
         }
         else if(typeof overrides[key] === 'object') {
