@@ -1,8 +1,10 @@
+const path = require('path')
+
 function rewireLess (config, env, lessLoaderOptions = {}) {
   const lessExtension = /\.less$/;
 
   const fileLoader = config.module.rules
-    .find(rule => rule.loader && rule.loader.endsWith('/file-loader/index.js'));
+    .find(rule => rule.loader && rule.loader.endsWith(`${path.sep}file-loader${path.sep}index.js`));
   fileLoader.exclude.push(lessExtension);
 
   const cssRules = config.module.rules
