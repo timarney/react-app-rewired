@@ -8,17 +8,17 @@
 
 const babelJest = require('babel-jest');
 
-const customPlugins = []
+const customPlugins = [];
 try {
-    require.resolve('babel-plugin-transform-decorators-legacy');
-    customPlugins.push("babel-plugin-transform-decorators-legacy");
-    console.log("⚡ Rewired added babel-plugin-transform-decorators-legacy");
-} catch(e) {
-    //do nothing plugin not found
+  require.resolve('babel-plugin-transform-decorators-legacy');
+  customPlugins.push('babel-plugin-transform-decorators-legacy');
+  console.log('⚡ Rewired added babel-plugin-transform-decorators-legacy');
+} catch (e) {
+  //do nothing plugin not found
 }
 
 module.exports = babelJest.createTransformer({
   presets: [require.resolve('babel-preset-react-app')],
   plugins: customPlugins,
-  babelrc: false
+  babelrc: true
 });
