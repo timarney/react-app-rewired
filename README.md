@@ -41,22 +41,7 @@ module.exports = function override(config, env) {
 |   +-- src
 ```
 
-**Note: You can use one of the default rewires (see the [packages](/packages) dir):**
-
-```bash
-$ npm install --save react-app-rewire-sass
-```
-
-```diff
-/* config-overrides.js */
-
-+  const rewireSass = require('react-app-rewire-sass');
-
-  module.exports = function override(config, env) {
-+   config = rewireSass(config, env);
-    return config;
-  }
-```
+**Note:** You can use one of the default rewires (see the [packages](/packages) dir) or [injectBabelPlugin](https://github.com/timarney/react-app-rewired#utilities-injectbabelplugin)
 
 #### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts
 ```diff
