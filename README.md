@@ -83,6 +83,34 @@ $ npm start
 $ npm run build
 ```
 
+
+## Utilities (injectBabelPlugin)
+
+Adding a Babel plugin can be done via the `injectBabelPlugin(pluginName, config)` function.  You can also use the "rewire" packages from this repo or listed below to do common config modifications.
+
+```javascript
+const rewireMobX = require('react-app-rewire-mobx');
+const rewirePreact = require('react-app-rewire-preact');
+const {injectBabelPlugin} = require('react-app-rewired');
+
+/* config-overrides.js */
+module.exports = function override(config, env) {
+  // add a plugin
+  config = injectBabelPlugin('emotion/babel',config)
+  
+  // use the Preact rewire
+  if (env === "production") {
+    console.log("⚡ Production build with Preact");
+    config = rewirePreact(config, env);
+  }
+  
+  // use the MobX rewire
+  config = rewireMobX(config,env);
+  
+  return config;
+}
+```
+
 # Community Maintained Rewires
 
 [react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components/blob/master/README.md) @mxstbr
