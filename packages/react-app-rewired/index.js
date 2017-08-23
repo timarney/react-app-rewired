@@ -1,36 +1,25 @@
-const checkRuleLegacy = function(conf) {
-  if (!conf.loader) return false;
-  return conf.loader.indexOf("babel-loader") > -1;
-};
+const babelLoaderMatcher = function(rule) {
+  return rule.loader && rule.loader.indexOf("/babel-loader/") != -1;
+}
 
-const getLoader = function(config) {
-  let babelLoader = false;
-  let isBabel = false;
-  const checkRule = rule =>
-    rule.loader && rule.loader.indexOf("babel-loader") != -1;
+const getLoader = function(rules, matcher) {
+  var loader;
 
-  config.module.rules.forEach(rule => {
-    if (!rule.oneOf) {
-      isBabel = config.module.rules.find(checkRuleLegacy);
-
-      if (isBabel) {
-        babelLoader = isBabel;
-      }
-
-      return;
-    }
-
-    isBabel = rule.oneOf.find(checkRule);
-    if (isBabel) {
-      babelLoader = isBabel;
-    }
+  rules.some(rule => {
+    return loader = matcher(rule)
+      ? rule
+      : getLoader(rule.use || rule.oneOf || [], matcher);
   });
 
-  return babelLoader;
+  return loader;
 };
 
+const getBabelLoader = function(rules) {
+  return getLoader(rules, babelLoaderMatcher);
+}
+
 const injectBabelPlugin = function(pluginName, config) {
-  const loader = getLoader(config);
+  const loader = getBabelLoader(config.module.rules);
   if (!loader) {
     console.log("babel-loader not found");
     return config;
@@ -39,4 +28,4 @@ const injectBabelPlugin = function(pluginName, config) {
   return config;
 };
 
-module.exports = { injectBabelPlugin };
+module.exports = { getLoader, getBabelLoader, injectBabelPlugin };
