@@ -11,7 +11,7 @@ function rewireLess (config, env, lessLoaderOptions = {}) {
 
   const cssRules = getLoader(
     config.module.rules, rule => String(rule.test) === String(/\.css$/)
-  ;
+  );
 
   let lessRules;
   if (env === 'production') {
