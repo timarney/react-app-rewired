@@ -36,16 +36,21 @@ if (!process.env.CI && argv.indexOf("--coverage") < 0) {
 // @remove-on-eject-begin
 // This is not necessary after eject because we embed config into package.json.
 const createJestConfig = require("./utils/createJestConfig");
+const override = require(paths.projectDir + '/config-overrides');
+const overrideFn = (typeof override === 'function' || typeof override.jest !== 'function')
+  ? (config) => config
+  : override.jest;
+
 const path = require("path");
 const paths = require("../config/paths");
 argv.push(
   "--config",
   JSON.stringify(
-    createJestConfig(
+    overrideFn(createJestConfig(
       relativePath => path.resolve(__dirname, "..", relativePath),
       path.resolve(paths.appSrc, ".."),
       false
-    )
+    ))
   )
 );
 // @remove-on-eject-end

@@ -13,8 +13,11 @@ const paths = require('../config/paths');
 const webpackConfig = paths.scriptVersionDir + '/config/webpack.config.dev';
 const config = require(webpackConfig);
 const override = require(paths.projectDir + '/config-overrides');
+const overrideFn = typeof override === 'function'
+  ? override
+  : override.webpack || ((config, env) => config);
 
 require.cache[require.resolve(webpackConfig)].exports =
-  override(config, process.env.NODE_ENV);
+  overrideFn(config, process.env.NODE_ENV);
 
 require(paths.scriptVersionDir + '/scripts/start');
