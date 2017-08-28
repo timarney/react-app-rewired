@@ -5,7 +5,7 @@ function rewireLess (config, env, lessLoaderOptions = {}) {
   const lessExtension = /\.less$/;
 
   const fileLoader = getLoader(
-    config.module.rules, rule => rule.loader && rule.loader.endsWith(`file-loader${path.sep}index.js`)
+    config.module.rules, rule => rule.loader && typeof rule.loader === 'string' && rule.loader.endsWith(`file-loader${path.sep}index.js`)
   );
   fileLoader.exclude.push(lessExtension);
 
