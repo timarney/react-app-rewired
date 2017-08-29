@@ -33,6 +33,8 @@ if (!process.env.CI && argv.indexOf("--coverage") < 0) {
   argv.push("--watch");
 }
 
+const paths = require("../config/paths");
+
 // @remove-on-eject-begin
 // This is not necessary after eject because we embed config into package.json.
 const createJestConfig = require("./utils/createJestConfig");
@@ -42,7 +44,7 @@ const overrideFn = (typeof override === 'function' || typeof override.jest !== '
   : override.jest;
 
 const path = require("path");
-const paths = require("../config/paths");
+
 argv.push(
   "--config",
   JSON.stringify(
