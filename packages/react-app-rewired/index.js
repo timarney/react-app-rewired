@@ -1,3 +1,5 @@
+const path = require('path');
+
 const babelLoaderMatcher = function(rule) {
   return rule.loader && rule.loader.indexOf(`babel-loader${path.sep}`) != -1;
 }
