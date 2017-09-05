@@ -11,7 +11,7 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
-const paths = require('../../config/paths');
+const paths = require('./paths');
 
 module.exports = (resolve, rootDir, isEjecting) => {
   // Use this instead of `paths.testsSetup` to avoid putting
@@ -24,7 +24,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
   // in Jest configs. We need help from somebody with Windows to determine this.
   const config = {
     collectCoverageFrom: ['src/**/*.{js,jsx}'],
-    setupFiles: [resolve('config/polyfills.js')],
+    setupFiles: [require.resolve(paths.scriptVersion + '/config/polyfills.js')],
     setupTestFrameworkScriptFile: setupTestsFile,
     testMatch: [
       '<rootDir>/src/**/__tests__/**/*.js?(x)',
@@ -35,9 +35,9 @@ module.exports = (resolve, rootDir, isEjecting) => {
     transform: {
       '^.+\\.(js|jsx)$': isEjecting
         ? '<rootDir>/node_modules/babel-jest'
-        : resolve('config/jest/babelTransform.js'),
-      '^.+\\.css$': resolve('config/jest/cssTransform.js'),
-      '^(?!.*\\.(js|jsx|css|json)$)': resolve('config/jest/fileTransform.js'),
+        : resolve('scripts/utils/babelTransform.js'),
+      '^.+\\.css$': require.resolve(paths.scriptVersion + '/config/jest/cssTransform.js'),
+      '^(?!.*\\.(js|jsx|css|json)$)': require.resolve(paths.scriptVersion + '/config/jest/fileTransform.js'),
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
     moduleNameMapper: {
