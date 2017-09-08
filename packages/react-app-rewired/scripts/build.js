@@ -7,12 +7,10 @@ process.env.NODE_ENV = 'production';
 // https://github.com/motdotla/dotenv
 require('dotenv').config({silent: true});
 
-const fs = require('fs');
-const path = require('path');
-const paths = require('../config/paths');
-const webpackConfig = paths.scriptVersionDir + '/config/webpack.config.prod';
+const paths = require('./utils/paths');
+const webpackConfig = paths.scriptVersion + '/config/webpack.config.prod';
 const config = require(webpackConfig);
-const override = require(paths.projectDir + '/config-overrides');
+const override = require(paths.configOverrides);
 const overrideFn = typeof override === 'function'
   ? override
   : override.webpack;
@@ -20,4 +18,4 @@ const overrideFn = typeof override === 'function'
 require.cache[require.resolve(webpackConfig)].exports =
   overrideFn(config, process.env.NODE_ENV);
 
-require(paths.scriptVersionDir + '/scripts/build');
+require(paths.scriptVersion + '/scripts/build');
