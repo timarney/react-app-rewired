@@ -1,30 +1,8 @@
-"use strict";
-
-// Do this as the first thing so that any code reading it knows the right env.
-process.env.BABEL_ENV = "test";
-process.env.NODE_ENV = "test";
-process.env.PUBLIC_URL = "";
-
-// Makes the script crash on unhandled rejections instead of silently
-// ignoring them. In the future, promise rejections that are not handled will
-// terminate the Node.js process with a non-zero exit code.
-process.on("unhandledRejection", err => {
-  throw err;
-});
-
-const jest = require("jest");
 const path = require("path");
 const paths = require("./utils/paths");
-// Ensure environment variables are read.
-require(paths.scriptVersion + "/config/env");
 
-const argv = process.argv.slice(2);
-// Watch unless on CI or in coverage mode
-if (!process.env.CI && argv.indexOf("--coverage") < 0) {
-  argv.push("--watch");
-}
-
-const createJestConfig = require(paths.scriptVersion + "/scripts/utils/createJestConfig");
+const jestConfigPath = paths.scriptVersion + "/scripts/utils/createJestConfig";
+const createJestConfig = require(jestConfigPath);
 const rewireJestConfig = require("./utils/rewireJestConfig");
 const override = require(paths.configOverrides);
 const overrideFn = (typeof override === 'function' || typeof override.jest !== 'function')
@@ -45,9 +23,7 @@ const config = createJestConfig(
 // restore overrides for rewireJestConfig
 packageJson.jest = jestOverrides;
 
-argv.push(
-  "--config",
-  JSON.stringify(overrideFn(rewireJestConfig(config)))
-);
+require.cache[require.resolve(jestConfigPath)].exports =
+  () => overrideFn(rewireJestConfig(config));
 
-jest.run(argv);
+require(paths.scriptVersion + '/scripts/test');
