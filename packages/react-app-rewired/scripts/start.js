@@ -9,6 +9,7 @@ require('dotenv').config({silent: true});
 
 const paths = require('./utils/paths');
 const webpackConfig = paths.scriptVersion + '/config/webpack.config.dev';
+require(paths.scriptVersion + '/config/env');
 const config = require(webpackConfig);
 const override = require(paths.configOverrides);
 const overrideFn = typeof override === 'function'

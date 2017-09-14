@@ -2,6 +2,7 @@ const path = require("path");
 const paths = require("./utils/paths");
 
 const jestConfigPath = paths.scriptVersion + "/scripts/utils/createJestConfig";
+require(paths.scriptVersion + '/config/env');
 const createJestConfig = require(jestConfigPath);
 const rewireJestConfig = require("./utils/rewireJestConfig");
 const override = require(paths.configOverrides);
