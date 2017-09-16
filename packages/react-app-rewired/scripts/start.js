@@ -19,4 +19,12 @@ const overrideFn = typeof override === 'function'
 require.cache[require.resolve(webpackConfig)].exports =
   overrideFn(config, process.env.NODE_ENV);
 
+if (typeof override !== 'function' && typeof override.devServer === 'function') {
+  const devServerConfig = paths.scriptVersion + '/config/webpackDevServer.config.js';
+  const devServerRewire = require(devServerConfig);
+
+  require.cache[require.resolve(devServerConfig)].exports =
+    override.devServer(devServerRewire);
+}
+
 require(paths.scriptVersion + '/scripts/start');
