@@ -1,1 +1,0 @@
-http://www.brucepowerapp.com/wp-json/wp/v2/pages/6
