@@ -3,18 +3,21 @@
 * [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
 
 ```javascript
-module.exports = function override(config, env) {
-  var loader = 'style!css?modules&';
-  if (env === 'development') {
-    loader += 'importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss';
-  } else {
-    loader += '-autoprefixer&importLoaders=1!postcss';
-  }
-  // Find the right loader then patch its 'loader' property
-  config.module.loaders.forEach(l => {
-    if (String(l.test) == String(/\.css$/)) l.loader = loader
-  })
+const {getLoader} = require('react-app-rewired');
 
+const cssLoaderMatcher = function(rule) {
+  return rule.loader && rule.loader.indexOf(`css-loader`) != -1;
+}
+
+module.exports = function override(config, env) {
+
+  let l = getLoader(config.module.rules,cssLoaderMatcher);
+
+  l.options = {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: '[local]___[hash:base64:5]'
+          }
   return config;
 }
 
