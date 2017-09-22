@@ -1,6 +1,8 @@
 const path = require("path");
 const paths = require("./utils/paths");
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'test';
+
 const jestConfigPath = paths.scriptVersion + "/scripts/utils/createJestConfig";
 require(paths.scriptVersion + '/config/env');
 const createJestConfig = require(jestConfigPath);
