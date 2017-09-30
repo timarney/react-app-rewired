@@ -1,12 +1,11 @@
 /* build.js */
 process.env.NODE_ENV = 'production';
 
-// Load environment variables from .env files
-require("react-scripts/config/env");
-
 const paths = require('./utils/paths');
-const webpackConfig = paths.scriptVersion + '/config/webpack.config.prod';
+// Load environment variables from .env files
 require(paths.scriptVersion + '/config/env');
+
+const webpackConfig = paths.scriptVersion + '/config/webpack.config.prod';
 const config = require(webpackConfig);
 const override = require(paths.configOverrides);
 const overrideFn = typeof override === 'function'
