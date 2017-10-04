@@ -22,6 +22,7 @@ function rewireEslint(config, env) {
   // Thx @Guria, with no break change.
   const options = oldOptions || newOptions;
   options.useEslintrc = true;
+  options.ignore = true;
   return config;
 }
 
