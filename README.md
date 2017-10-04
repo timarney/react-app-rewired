@@ -98,11 +98,29 @@ module.exports = function override(config, env) {
 
 # Community Maintained Rewires
 
-[react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components/blob/master/README.md) @mxstbr
+## Babel plugins
 
-[react-app-rewire-emotion](https://github.com/osdevisnot/react-app-rewire-emotion) @osdevisnot
+* [react-app-rewire-emotion](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-emotion) by [@osdevisnot](https://github.com/osdevisnot)
+* [react-app-rewire-lodash](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-lodash) by [@osdevisnot](https://github.com/osdevisnot)
+* [react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components) by [@mxstbr](https://github.com/mxstbr)
 
-[react-app-rewire-create-react-library](https://github.com/osdevisnot/react-app-rewire-create-react-library) @osdevisnot
+## Webpack plugins
+
+* [react-app-rewire-appcache-plugin](https://github.com/lwd-technology/react-app-rewire-appcache-plugin) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-define-plugin](https://github.com/lwd-technology/react-app-rewire-define-plugin) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-imagemin-plugin](https://github.com/lwd-technology/react-app-rewire-imagemin-plugin) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-preload-plugin](https://github.com/lwd-technology/react-app-rewire-preload-plugin) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-provide-plugin](https://github.com/lwd-technology/react-app-rewire-provide-plugin) by [@icopp](https://github.com/icopp)
+
+## Loaders
+
+* [react-app-rewire-nearley](https://github.com/lwd-technology/react-app-rewire-nearley) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-typescript](https://github.com/lwd-technology/react-app-rewire-typescript) by [@icopp](https://github.com/icopp)
+
+## Other
+
+* [react-app-rewire-create-react-library](https://github.com/osdevisnot/react-app-rewire-create-react-library) by [@osdevisnot](https://github.com/osdevisnot)
+* [react-app-rewire-react-library](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-react-library) by [@osdevisnot](https://github.com/osdevisnot)
 
 # Why This Project Exists
 
