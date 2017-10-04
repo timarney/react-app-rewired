@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewire-eslint",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "rewire your react-app and use your own esling config",
   "main": "index.js",
   "scripts": {
