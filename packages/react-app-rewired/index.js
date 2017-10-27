@@ -45,4 +45,4 @@ const compose = function(...funcs) {
   return funcs.reduce((a, b) => (config, env) => a(b(config, env), env));
 };
 
-module.exports = { getLoader, getBabelLoader, injectBabelPlugin };
+module.exports = { getLoader, getBabelLoader, injectBabelPlugin, compose };
