@@ -69,7 +69,9 @@ $ npm run build
 ```
 
 
-## Utilities (injectBabelPlugin)
+## Utilities 
+
+#### 1) injectBabelPlugin
 
 Adding a Babel plugin can be done via the `injectBabelPlugin(pluginName, config)` function.  You can also use the "rewire" packages from this repo or listed below to do common config modifications.
 
@@ -95,6 +97,49 @@ module.exports = function override(config, env) {
   return config;
 }
 ```
+
+#### 2) compose(after v1.3.4)
+
+You can use this util to `compose` rewires.
+Before:
+```javascript
+/* config-overrides.js */
+module.exports = function override(config, env) {
+  config = rewireLess(config, env);
+  config = rewirePreact(config, env);
+  config = rewireMobX(config,env);
+  
+  return config;
+}
+```
+After use `compose`:
+```javascript
+/* config-overrides.js */
+const { compose } = require('react-app-reiwred');
+
+module.exports = compose(
+  rewireLess,
+  rewirePreact,
+  rewireMobx
+  ...
+)
+//  custom config 
+module.exports = function(config, env){
+  const applyedRewires = compose(
+    rewireLess,
+    rewirePreact,
+    rewireMobx
+    ...
+  );
+  // do custom config
+  // ...
+  return applyedReiwres(config, env);
+}
+```
+Some change with rewire:
+if you want set some `extra param` for `rewire`, you can see (react-app-rewire-less)[https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js]
+
+
 
 # Community Maintained Rewires
 

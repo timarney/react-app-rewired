@@ -26,10 +26,9 @@ const injectBabelPlugin = function(pluginName, config) {
     console.log('babel-loader not found');
     return config;
   }
-  const plugins = Array.isArray(pluginName) ? pluginName : [pluginName];
   // Older versions of webpack have `plugins` on `loader.query` instead of `loader.options`.
   const options = loader.options || loader.query;
-  options.plugins = plugins.concat(options.plugins || []);
+  options.plugins =  [pluginName].concat(options.plugins || []);
   return config;
 };
 
