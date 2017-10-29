@@ -142,8 +142,9 @@ you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewire
 
 2. Required params:  
 ```javascript
+// rewireSome.js
 const createRewire(requiredParams){
-  return rewire(config, env){
+  return function rewire(config, env){
     ///
     return config
   }
