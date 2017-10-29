@@ -143,7 +143,7 @@ you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewire
 2. Required params:  
 ```javascript
 // rewireSome.js
-const createRewire(requiredParams){
+function createRewire(requiredParams){
   return function rewire(config, env){
     ///
     return config
