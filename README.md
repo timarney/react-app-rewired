@@ -137,7 +137,7 @@ module.exports = function(config, env){
 }
 ```
 Some change with rewire:
-if you want set some `extra param` for `rewire`, you can see (react-app-rewire-less)[https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js]
+if you want set some `extra param` for `rewire`, you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js)
 
 
 
