@@ -136,8 +136,20 @@ module.exports = function(config, env){
   return applyedReiwres(config, env);
 }
 ```
-Some change with rewire:
-if you want set some `extra param` for `rewire`, you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js)
+Some change with rewire, if you want to add some `extra param` for `rewire`  
+1. Optional params:  
+you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js)  
+
+2. Required params:  
+```javascript
+const createRewire(requiredParams){
+  return rewire(config, env){
+    ///
+    return config
+  }
+}
+module.exports = createRewire;
+```
 
 
 
