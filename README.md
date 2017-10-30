@@ -128,7 +128,7 @@ module.exports = compose(
 )
 //  custom config 
 module.exports = function(config, env){
-  const applyedRewires = compose(
+  const rewires = compose(
     rewireLess,
     rewirePreact,
     rewireMobx
@@ -136,7 +136,7 @@ module.exports = function(config, env){
   );
   // do custom config
   // ...
-  return applyedReiwres(config, env);
+  return rewires(config, env);
 }
 ```
 Some change with rewire, if you want to add some `extra param` for `rewire`  
@@ -154,8 +154,6 @@ function createRewire(requiredParams){
 }
 module.exports = createRewire;
 ```
-
-
 
 # Community Maintained Rewires
 
