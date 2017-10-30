@@ -100,7 +100,10 @@ module.exports = function override(config, env) {
 
 #### 2) compose(after v1.3.4)
 
-You can use this util to `compose` rewires.
+You can use this util to compose rewires.
+> A functional programming utility, performs `right-to-left` function composition.     
+More detail you can see [ramda](http://ramdajs.com/docs/#compose) or [redux](http://redux.js.org/docs/api/compose.html#composefunctions)  
+
 Before:
 ```javascript
 /* config-overrides.js */
