@@ -11,7 +11,7 @@ function getEslintOptions(rules) {
   return getLoader(rules, matcher).options;
 }
 
-function rewireEslint(config, env) {
+function rewireEslint(config, env, override = f => f) {
   // if `react-scripts` version < 1.0.0
   // **eslint options** is in `config`
   const oldOptions = config.eslint;
@@ -23,6 +23,9 @@ function rewireEslint(config, env) {
   const options = oldOptions || newOptions;
   options.useEslintrc = true;
   options.ignore = true;
+
+  override(options);
+
   return config;
 }
 
