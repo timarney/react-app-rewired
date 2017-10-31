@@ -176,6 +176,7 @@ module.exports = createRewire;
 * [react-app-rewire-nearley](https://github.com/lwd-technology/react-app-rewire-nearley) by [@icopp](https://github.com/icopp)
 * [react-app-rewire-typescript](https://github.com/lwd-technology/react-app-rewire-typescript) by [@icopp](https://github.com/icopp)
 * [react-app-rewire-css-modules](https://github.com/codebandits/react-app-rewire-css-modules) by [@lnhrdt](https://github.com/lnhrdt)
+* [react-app-rewire-svg-react-loader](https://github.com/codebandits/react-app-rewire-svg-react-loader) by [@lnhrdt](https://github.com/lnhrdt)
 
 ## Other
 
