@@ -8,8 +8,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "less": "^2.7.2",
-    "less-loader": "^4.0.3"
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5"
   },
   "peerDependencies": {
     "react-app-rewired": "^1.2.1"
