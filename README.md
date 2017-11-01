@@ -118,7 +118,7 @@ module.exports = function override(config, env) {
 After use `compose`:
 ```javascript
 /* config-overrides.js */
-const { compose } = require('react-app-reiwred');
+const { compose } = require('react-app-rewired');
 
 module.exports = compose(
   rewireLess,
