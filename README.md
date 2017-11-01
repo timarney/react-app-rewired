@@ -110,7 +110,7 @@ Before:
 module.exports = function override(config, env) {
   config = rewireLess(config, env);
   config = rewirePreact(config, env);
-  config = rewireMobX(config,env);
+  config = rewireMobX(config, env);
   
   return config;
 }
