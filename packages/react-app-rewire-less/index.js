@@ -10,7 +10,7 @@ function createRewireLess(lessLoaderOptions = {}) {
       rule =>
         rule.loader &&
         typeof rule.loader === 'string' &&
-        rule.loader.indexOf(`${path.sep}file-loader${path.sep}`) !== -1,
+        rule.loader.indexOf(`${path.sep}file-loader${path.sep}`) !== -1
     );
     fileLoader.exclude.push(lessExtension);
 
