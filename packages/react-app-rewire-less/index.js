@@ -1,5 +1,5 @@
-const path = require('path');
-const { getLoader } = require('react-app-rewired');
+const path = require("path");
+const { getLoader } = require("react-app-rewired");
 
 function createRewireLess(lessLoaderOptions = {}) {
   return function(config, env) {
@@ -20,7 +20,7 @@ function createRewireLess(lessLoaderOptions = {}) {
     );
 
     let lessRules;
-    if (env === 'production') {
+    if (env === "production") {
       lessRules = {
         test: lessExtension,
         loader: [
@@ -29,7 +29,7 @@ function createRewireLess(lessLoaderOptions = {}) {
           //       will not work.
           //       https://github.com/timarney/react-app-rewired/issues/33
           ...cssRules.loader,
-          { loader: 'less-loader', options: lessLoaderOptions }
+          { loader: "less-loader", options: lessLoaderOptions }
         ]
       };
     } else {
@@ -37,12 +37,12 @@ function createRewireLess(lessLoaderOptions = {}) {
         test: lessExtension,
         use: [
           ...cssRules.use,
-          { loader: 'less-loader', options: lessLoaderOptions }
+          { loader: "less-loader", options: lessLoaderOptions }
         ]
       };
     }
 
-    config.module.rules.push(lessRules);
+    config.module.rules[1].oneOf.unshift(lessRules);
 
     return config;
   };
