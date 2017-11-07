@@ -42,7 +42,14 @@ function createRewireLess(lessLoaderOptions = {}) {
       };
     }
 
-    config.module.rules[1].oneOf.unshift(lessRules);
+    const oneOfRule = config.module.rules.find((rule) => rule.oneOf !== undefined);
+    if (oneOfRule) {
+      oneOfRule.oneOf.unshift(lessRules);
+    }
+    else {
+      // Fallback to previous behaviour of adding to the end of the rules list.
+      config.module.rules.push(lessRules);
+    }
 
     return config;
   };
