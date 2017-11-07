@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewired",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts",
   "private": false,
   "bin": {
