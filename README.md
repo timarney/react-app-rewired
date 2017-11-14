@@ -184,6 +184,9 @@ module.exports = createRewire;
 * [react-app-rewire-create-react-library](https://github.com/osdevisnot/react-app-rewire-create-react-library) by [@osdevisnot](https://github.com/osdevisnot)
 * [react-app-rewire-react-library](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-react-library) by [@osdevisnot](https://github.com/osdevisnot)
 
+* [react-app-rewired with Inferno](packages/react-app-rewired/examples/inferno.md)
+* [react-app-rewired with react-styleguideist](packages/react-app-rewired/examples/react-styleguidist.md)
+
 # Why This Project Exists
 
 See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
