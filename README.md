@@ -188,6 +188,7 @@ module.exports = createRewire;
 
 * [react-app-rewired with Inferno](packages/react-app-rewired/examples/inferno.md)
 * [react-app-rewired with react-styleguideist](packages/react-app-rewired/examples/react-styleguidist.md)
+* [react-app-rewired with react-hot-loader](https://github.com/cdharris/react-app-rewire-hot-loader) by [@cdharris](https://github.com/cdharris)
 
 # Why This Project Exists
 
