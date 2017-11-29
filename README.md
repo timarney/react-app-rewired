@@ -158,67 +158,26 @@ module.exports = createRewire;
 ## Expanded Configuration Options
 By default, the `override-config.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
 
+This example implementation is used to demonstrate using each of the object require functions. In the example, the functions:
+* use the react-app-rewire-less package to add less support to your project
+* have some tests run conditionally based on `.env` variables
+* set the https certificates to use for the Development Server, with the filenames specified in `.env` file variables.
 ```javascript
 module.exports = {
   // The Webpack config to use when compiling your react app for development or production.
   webpack: function(config, env) {
     // ...add your webpack config customisation, rewires, etc...
+    // Example: add less support to your app.
+    const rewireLess = require('react-app-rewire-less');
+    config = rewireLess(config, env);
+
     return config;
   },
   // The Jest config to use when running your jest tests - note that the normal rewires do not
   // work here.
   jest: function(config) {
     // ...add your jest config customisation...
-    return config;
-  },
-  // The function to use to create a webpack dev server configuration when running the development
-  // server with 'npm run start' or 'yarn start'.
-  devServer: function(configFunction) {
-    return function(proxy, allowedHost) {
-      const config = configFunction(proxy, allowedHost);
-      // ...add your webpack dev server config customisation here...
-      return config;
-    }
-  }
-}
-```
-#### 1) Webpack configuration - Development & Production
-The `webpack` field is used to provide the equivalent to the single-function exported from config-overrides.js. This is where all the usual rewires are used. It is not able to configure compilation in test mode because test mode does not get run through Webpack at all (it runs in Jest). It is also not able to be used to customise the Webpack Dev Server that is used to serve pages in development mode because create-react-app generates a separate Webpack configuration for use with the dev server using different functions and defaults.
-
-#### 2) Jest configuration - Testing
-Webpack is not used for compiling your application in Test mode - Jest is used instead. This means that any rewires specified in your webpack config customisation function _will not be applied_ to your project in test mode.
-
-React-app-rewired automatically allows you to customise your Jest configuration in a `jest` section of your `package.json` file, including allowing you to set configuration fields that create-react-app would usually block you from being able to set. It also automatically sets up Jest to compile the project with Babel prior to running tests. Jest's configuration options are documented separately at the [Jest website](https://facebook.github.io/jest/docs/en/configuration.html).
-
-If you want to add plugins and/or presets to the Babel configuration that Jest will use, you need to define those plugins/presets in either a `babel` section inside the `package.json` file or inside a `.babelrc` file. React-app-rewired alters the Jest configuration to use these definition files for specifying Babel options when Jest is compiling your react app. The format to use in the Babel section of package.json or the .babelrc file is documented separately at the [Babel website](https://babeljs.io/docs/usage/babelrc/).
-
-The `jest` field in the module.exports object in `config-overrides.js` is used to specify a function that can be called to customise the Jest testing configuration in ways that are not possible in the jest section of the package.json file. For example, it will allow you to change some configuration options based on environment variables. This function is passed the default create-react-app Jest configuration as a parameter and is required to return the modified Jest configuration that you want to use. A lot of the time you'll be able to make the configuration changes needed simply by using a combination of the `package.json` file's jest section and a `.babelrc` file (or babel section in package.json) instead of needing to provide this jest function in `config-overrides.js`.
-
-#### 3) Webpack Dev Server
-When running in development mode, create-react-app does not use the usual Webpack config for the Development Server (the one that serves the app pages). This means that you cannot use the normal `webpack` section of the `config-overrides.js` server to make changes to the Development Server settings as those changes won't be applied.
-
-Instead of this, create-react-app expects to be able to call a function to generate the webpack dev server when needed. This function is provided with parameters for the proxy and allowedHost settings to be used in the webpack dev server (create-react-app retrieves the values for those parameters from your package.json file).
-
-React-app-rewired provides the ability to override this function through use of the `devServer` field in the module.exports object in `config-overrides.js`. It provides the devServer function a single parameter containing the default create-react-app function that is normally used to generate the dev server config (it cannot provide a generated version of the configuration because react-scripts is calling the generation function directly). React-app-rewired needs to receive as a return value a _replacement function_ for create-react-app to then use to generate the Development Server configuration (i.e. the return value should be a new function that takes the two parameters for proxy and allowedHost and itself returns a Webpack Development Server configuration). The original react-scripts function is passed into the `config-overrides.js` devServer function so that you are able to easily call this yourself to generate your initial devServer configuration based on what the defaults used by create-react-app are.
-
-#### 4) Example object-style config-overrides.js
-This example implementation is used to demonstrate using each of the object require functions. In the example, the functions:
-* use the react-app-rewire-less package to add less support to your project
-* have some tests run conditionally based on `.env` variables
-* set the https certificates to use for the Development Server, with the filenames specified in `.env` file variables
-```javascript
-module.exports = {
-  webpack: function (config, env) {
-    // Do your rewires for Webpack to compile your javascript app in Development and Production
-    // modes here.
-    const rewireLess = require('react-app-rewire-less');
-    config = rewireLess(config, env);
-
-    return config;
-  },
-  jest: function (config) {
-    // Customise the Jest config used in Test mode here. Note that Webpack rewires do not work
-    // in the Jest config.
+    // Example: enable/disable some tests based on environment variables in the .env file.
     if (!config.testPathIgnorePatterns) {
       config.testPathIgnorePatterns = [];
     }
@@ -230,7 +189,10 @@ module.exports = {
     }
     return config;
   },
-  devServer: function (configFunction) {
+  // The function to use to create a webpack dev server configuration when running the development
+  // server with 'npm run start' or 'yarn start'.
+  // Example: set the dev server to use a specific certificate in https.
+  devServer: function(configFunction) {
     // Return the replacement function for create-react-app to use to generate the Webpack
     // Development Server config. "configFunction" is the function that would normally have
     // been used to generate the Webpack Development server config - you can use it to create
@@ -251,10 +213,29 @@ module.exports = {
 
       // Return your customised Webpack Development Server config.
       return config;
-    };
+    }
   }
 }
 ```
+
+#### 1) Webpack configuration - Development & Production
+The `webpack` field is used to provide the equivalent to the single-function exported from config-overrides.js. This is where all the usual rewires are used. It is not able to configure compilation in test mode because test mode does not get run through Webpack at all (it runs in Jest). It is also not able to be used to customise the Webpack Dev Server that is used to serve pages in development mode because create-react-app generates a separate Webpack configuration for use with the dev server using different functions and defaults.
+
+#### 2) Jest configuration - Testing
+Webpack is not used for compiling your application in Test mode - Jest is used instead. This means that any rewires specified in your webpack config customisation function _will not be applied_ to your project in test mode.
+
+React-app-rewired automatically allows you to customise your Jest configuration in a `jest` section of your `package.json` file, including allowing you to set configuration fields that create-react-app would usually block you from being able to set. It also automatically sets up Jest to compile the project with Babel prior to running tests. Jest's configuration options are documented separately at the [Jest website](https://facebook.github.io/jest/docs/en/configuration.html).
+
+If you want to add plugins and/or presets to the Babel configuration that Jest will use, you need to define those plugins/presets in either a `babel` section inside the `package.json` file or inside a `.babelrc` file. React-app-rewired alters the Jest configuration to use these definition files for specifying Babel options when Jest is compiling your react app. The format to use in the Babel section of package.json or the .babelrc file is documented separately at the [Babel website](https://babeljs.io/docs/usage/babelrc/).
+
+The `jest` field in the module.exports object in `config-overrides.js` is used to specify a function that can be called to customise the Jest testing configuration in ways that are not possible in the jest section of the package.json file. For example, it will allow you to change some configuration options based on environment variables. This function is passed the default create-react-app Jest configuration as a parameter and is required to return the modified Jest configuration that you want to use. A lot of the time you'll be able to make the configuration changes needed simply by using a combination of the `package.json` file's jest section and a `.babelrc` file (or babel section in package.json) instead of needing to provide this jest function in `config-overrides.js`.
+
+#### 3) Webpack Dev Server
+When running in development mode, create-react-app does not use the usual Webpack config for the Development Server (the one that serves the app pages). This means that you cannot use the normal `webpack` section of the `config-overrides.js` server to make changes to the Development Server settings as those changes won't be applied.
+
+Instead of this, create-react-app expects to be able to call a function to generate the webpack dev server when needed. This function is provided with parameters for the proxy and allowedHost settings to be used in the webpack dev server (create-react-app retrieves the values for those parameters from your package.json file).
+
+React-app-rewired provides the ability to override this function through use of the `devServer` field in the module.exports object in `config-overrides.js`. It provides the devServer function a single parameter containing the default create-react-app function that is normally used to generate the dev server config (it cannot provide a generated version of the configuration because react-scripts is calling the generation function directly). React-app-rewired needs to receive as a return value a _replacement function_ for create-react-app to then use to generate the Development Server configuration (i.e. the return value should be a new function that takes the two parameters for proxy and allowedHost and itself returns a Webpack Development Server configuration). The original react-scripts function is passed into the `config-overrides.js` devServer function so that you are able to easily call this yourself to generate your initial devServer configuration based on what the defaults used by create-react-app are.
 
 ## Additional Issues and Options
 #### 1) Entry Point: 'src/index.js'
