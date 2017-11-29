@@ -284,15 +284,14 @@ A working example for using the scripts version option is:
 ```
 
 React-app-rewired requires a custom react-scripts package to provide the following files:
-* config/env
-* config/webpack.config.dev
-* config/webpack.config.prod
+* config/env.js
+* config/webpack.config.dev.js
+* config/webpack.config.prod.js
 * config/webpackDevServer.config.js
-* scripts/build
-* scripts/start
-* scripts/test
-* scripts/utils/createJestConfig
-
+* scripts/build.js
+* scripts/start.js
+* scripts/test.js
+* scripts/utils/createJestConfig.js
 
 #### 3) Specify config-overrides as a directory
 React-app-rewired imports your config-overrides.js file without the '.js' extension. This means that you have the option of creating a directory called `config-overrides` at the root of your project and exporting your overrides from the default `index.js` file inside that directory.
