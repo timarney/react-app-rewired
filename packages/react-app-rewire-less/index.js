@@ -1,5 +1,5 @@
 const path = require("path");
-const { getLoader } = require("react-app-rewired");
+const { getLoader, loaderNameMatches } = require("react-app-rewired");
 
 function createRewireLess(lessLoaderOptions = {}) {
   return function(config, env) {
@@ -7,11 +7,7 @@ function createRewireLess(lessLoaderOptions = {}) {
 
     const fileLoader = getLoader(
       config.module.rules,
-      rule =>
-        rule.loader &&
-        typeof rule.loader === 'string' &&
-        (rule.loader.indexOf(`${path.sep}file-loader${path.sep}`) !== -1 ||
-        rule.loader.indexOf(`@file-loader${path.sep}`) !== -1)
+      rule => loaderNameMatches(rule, 'file-loader')
     );
     fileLoader.exclude.push(lessExtension);
 

@@ -1,13 +1,11 @@
 const path = require('path');
-const { getLoader } = require('react-app-rewired');
+const { getLoader, loaderNameMatches } = require('react-app-rewired');
 
 // this is the path of eslint-loader `index.js`
-const ESLINT_PATH = `eslint-loader${path.sep}index.js`;
+const ESLINT_PATH = 'eslint-loader';
 
 function getEslintOptions(rules) {
-  const matcher = (rule) => rule.loader 
-    && typeof rule.loader === 'string' 
-    && rule.loader.endsWith(ESLINT_PATH);
+  const matcher = (rule) => loaderNameMatches(rule, ESLINT_PATH);
   return getLoader(rules, matcher).options;
 }
 
