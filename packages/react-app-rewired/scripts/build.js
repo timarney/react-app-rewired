@@ -1,18 +1,15 @@
-/* build.js */
 process.env.NODE_ENV = 'production';
 
 const paths = require('./utils/paths');
-// Load environment variables from .env files
+const overrides = require('../config-overrides');
+const webpackConfigPath = paths.scriptVersion + "/config/webpack.config.prod";
+
+// load environment variables from .env files
 require(paths.scriptVersion + '/config/env');
-
-const webpackConfig = paths.scriptVersion + '/config/webpack.config.prod';
-const config = require(webpackConfig);
-const override = require(paths.configOverrides);
-const overrideFn = typeof override === 'function'
-  ? override
-  : override.webpack;
-
-require.cache[require.resolve(webpackConfig)].exports =
-  overrideFn(config, process.env.NODE_ENV);
-
+// load original config
+const webpackConfig = require(webpackConfigPath);
+// override config in memory
+require.cache[require.resolve(webpackConfigPath)].exports =
+  overrides.webpack(webpackConfig, process.env.NODE_ENV);
+// run original script
 require(paths.scriptVersion + '/scripts/build');
