@@ -155,7 +155,7 @@ function createRewire(requiredParams){
 module.exports = createRewire;
 ```
 
-## Expanded Configuration Options
+## Extended Configuration Options
 By default, the `override-config.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
 
 This example implementation is used to demonstrate using each of the object require functions. In the example, the functions:
@@ -236,6 +236,20 @@ When running in development mode, create-react-app does not use the usual Webpac
 Instead of this, create-react-app expects to be able to call a function to generate the webpack dev server when needed. This function is provided with parameters for the proxy and allowedHost settings to be used in the webpack dev server (create-react-app retrieves the values for those parameters from your package.json file).
 
 React-app-rewired provides the ability to override this function through use of the `devServer` field in the module.exports object in `config-overrides.js`. It provides the devServer function a single parameter containing the default create-react-app function that is normally used to generate the dev server config (it cannot provide a generated version of the configuration because react-scripts is calling the generation function directly). React-app-rewired needs to receive as a return value a _replacement function_ for create-react-app to then use to generate the Development Server configuration (i.e. the return value should be a new function that takes the two parameters for proxy and allowedHost and itself returns a Webpack Development Server configuration). The original react-scripts function is passed into the `config-overrides.js` devServer function so that you are able to easily call this yourself to generate your initial devServer configuration based on what the defaults used by create-react-app are.
+
+#### 4) Provide rewired webpack config for 3rd party tools
+Some third party tools, like [`react-cosmos`](https://github.com/react-cosmos/react-cosmos) relies on your webpack config.
+You can create `webpack.config.js` file and export rewired config using following snippet:
+```js
+const { paths } = require('react-app-rewired');
+// require normalized overrides
+const overrides = require('react-app-rewired/config-overrides');
+const config = require(paths.scriptVersion + '/config/webpack.config.dev');
+
+module.exports = overrides.webpack(config, process.env.NODE_ENV);
+```
+
+Then just point to this file in tool configuration.
 
 ## Additional Issues and Options
 #### 1) Entry Point: 'src/index.js'

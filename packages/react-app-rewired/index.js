@@ -1,4 +1,11 @@
 const path = require('path');
+const paths = require('./scripts/utils/paths');
+
+const loaderNameMatches = function(rule, loader_name) {
+  return rule && rule.loader && typeof rule.loader === 'string' &&
+    (rule.loader.indexOf(`${path.sep}${loader_name}${path.sep}`) !== -1 ||
+    rule.loader.indexOf(`@${loader_name}${path.sep}`) !== -1);
+}
 
 const babelLoaderMatcher = function(rule) {
   return loaderNameMatches(rule, 'babel-loader');
@@ -15,12 +22,6 @@ const getLoader = function(rules, matcher) {
 
   return loader;
 };
-
-const loaderNameMatches = function(rule, loader_name) {
-  return rule && rule.loader && typeof rule.loader === 'string' &&
-    (rule.loader.indexOf(`${path.sep}${loader_name}${path.sep}`) !== -1 ||
-    rule.loader.indexOf(`@${loader_name}${path.sep}`) !== -1);
-}
 
 const getBabelLoader = function(rules) {
   return getLoader(rules, babelLoaderMatcher);
@@ -50,4 +51,11 @@ const compose = function(...funcs) {
   return funcs.reduce((a, b) => (config, env) => a(b(config, env), env));
 };
 
-module.exports = { getLoader, loaderNameMatches, getBabelLoader, injectBabelPlugin, compose };
+module.exports = {
+  getLoader,
+  loaderNameMatches,
+  getBabelLoader,
+  injectBabelPlugin,
+  compose,
+  paths
+};
