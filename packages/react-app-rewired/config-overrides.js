@@ -6,9 +6,7 @@ const webpack = typeof override === 'function'
   : override.webpack || ((config, env) => config);
 
 const devserver = override.devserver
-  || ((configFunction) =>
-    (proxy, allowedHost) =>
-      configFunction(proxy, allowedHost));
+  || ((config) => config);
 
 const jest = override.jest || ((config) => config);
 

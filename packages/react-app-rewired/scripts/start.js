@@ -9,11 +9,15 @@ const devserverConfigPath = paths.scriptVersion + "/config/webpackDevServer.conf
 require(paths.scriptVersion + '/config/env');
 // load original configs
 const webpackConfig = require(webpackConfigPath);
-const devserverConfig = require(devserverConfigPath);
+const devserverConfigFn = require(devserverConfigPath);
 // override config in memory
 require.cache[require.resolve(webpackConfigPath)].exports =
   overrides.webpack(webpackConfig, process.env.NODE_ENV);
-require.cache[require.resolve(devserverConfigPath)].exports =
-  overrides.devserver(devserverConfig, process.env.NODE_ENV);
+
+require.cache[require.resolve(devserverConfigPath)].exports = (proxy, allowedHost) => {
+  config = devserverConfigFn(proxy, allowedHost);
+  return overrides.devserver(config);
+}
+
 // run original script
 require(paths.scriptVersion + "/scripts/start");
