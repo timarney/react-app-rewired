@@ -5,14 +5,16 @@ const webpack = typeof override === 'function'
   ? override
   : override.webpack || ((config, env) => config);
 
-const devServer = override.devServer
-  || ((config) => config);
+const devserver = override.devserver
+  || ((configFunction) =>
+    (proxy, allowedHost) =>
+      configFunction(proxy, allowedHost));
 
 const jest = override.jest || ((config) => config);
 
 // normalized overrides functions
 module.exports = {
   webpack,
-  devServer,
+  devserver,
   jest
 };
