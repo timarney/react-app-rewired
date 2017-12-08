@@ -6,8 +6,6 @@ const overrides = require('../config-overrides');
 const rewireJestConfig = require("./utils/rewireJestConfig");
 const createJestConfigPath = paths.scriptVersion + "/scripts/utils/createJestConfig";
 
-// load environment variables from .env files
-require(paths.scriptVersion + '/config/env');
 // hide overrides in package.json for CRA's original createJestConfig
 const packageJson = require(paths.appPackageJson);
 const jestOverrides = packageJson.jest;

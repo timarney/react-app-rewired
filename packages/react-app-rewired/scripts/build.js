@@ -4,8 +4,6 @@ const paths = require('./utils/paths');
 const overrides = require('../config-overrides');
 const webpackConfigPath = paths.scriptVersion + "/config/webpack.config.prod";
 
-// load environment variables from .env files
-require(paths.scriptVersion + '/config/env');
 // load original config
 const webpackConfig = require(webpackConfigPath);
 // override config in memory
