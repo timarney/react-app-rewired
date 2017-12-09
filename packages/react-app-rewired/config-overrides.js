@@ -1,4 +1,7 @@
 const {paths} = require('./');
+// load environment variables from .env files
+// before overrides scripts are read
+require(paths.scriptVersion + '/config/env');
 const override = require(paths.configOverrides);
 
 const webpack = typeof override === 'function'
