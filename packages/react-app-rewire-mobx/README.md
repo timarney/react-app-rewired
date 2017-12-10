@@ -8,7 +8,7 @@ $ npm install --save mobx mobx-react react-app-rewire-mobx
 
 # Add it to your project
 
-* [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project) than modify `config-overrides.js`
+* [Rewire your app](https://github.com/timarney/react-app-rewired#how-to-rewire-your-create-react-app-project), then modify `config-overrides.js`
 
 ```javascript
 const rewireMobX = require('react-app-rewire-mobx');
