@@ -12,10 +12,8 @@ const devserverConfig = require(devserverConfigPath);
 require.cache[require.resolve(webpackConfigPath)].exports =
   overrides.webpack(webpackConfig, process.env.NODE_ENV);
 
-require.cache[require.resolve(devServerConfigPath)].exports = (proxy, allowedHost) => {
-  const config = devServerConfigFn(proxy, allowedHost);
-  return overrides.devServer(config);
-}
+require.cache[require.resolve(devserverConfigPath)].exports =
+  overrides.devserver(devserverConfig, process.env.NODE_ENV);
 
 // run original script
 require(paths.scriptVersion + "/scripts/start");
