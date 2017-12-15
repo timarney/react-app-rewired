@@ -8,7 +8,14 @@ const webpack = typeof override === 'function'
   ? override
   : override.webpack || ((config, env) => config);
 
-const devServer = override.devServer
+if (override.devserver) {
+  console.log(
+    'Warning: `devserver` has been deprecated. Please use `devServer` instead as ' +
+    '`devserver` will not be used in the next major release.'
+  )
+}
+
+const devServer = override.devServer || override.devserver
   || ((configFunction) =>
     (proxy, allowedHost) =>
       configFunction(proxy, allowedHost));
