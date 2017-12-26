@@ -319,6 +319,7 @@ If you have several custom overrides using a directory allows you to be able to 
 ## Loaders
 
 * [react-app-rewire-nearley](https://github.com/lwd-technology/react-app-rewire-nearley) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-coffeescript](https://github.com/stevefan1999/react-app-rewire-coffeescript) by [@stevefan1999](https://github.com/stevefan1999)
 * [react-app-rewire-typescript](https://github.com/lwd-technology/react-app-rewire-typescript) by [@icopp](https://github.com/icopp)
 * [react-app-rewire-css-modules](https://github.com/codebandits/react-app-rewire-css-modules) by [@lnhrdt](https://github.com/lnhrdt)
 * [react-app-rewire-less-modules](https://github.com/andriijas/react-app-rewire-less-modules) by [@andriijas](https://github.com/andriijas)
