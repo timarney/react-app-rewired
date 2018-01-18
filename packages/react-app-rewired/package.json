@@ -1,13 +1,13 @@
 {
   "name": "react-app-rewired",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts",
   "private": false,
   "bin": {
     "react-app-rewired": "./bin/index.js"
   },
   "peerDependencies": {
-    "react-scripts": "^1.0.14"
+    "react-scripts": "^2.0.0"
   },
   "dependencies": {
     "cross-spawn": "^5.1.0",
