@@ -3,8 +3,8 @@ const babelJest = require('babel-jest');
 
 const customPlugins = [];
 try {
-  require.resolve('babel-plugin-transform-decorators-legacy');
-  customPlugins.push('babel-plugin-transform-decorators-legacy');
+  const decoratorsPluginPath = require.resolve('babel-plugin-transform-decorators-legacy');
+  customPlugins.push(decoratorsPluginPath);
   console.log('⚡ Rewired added babel-plugin-transform-decorators-legacy');
 } catch (e) {
   //do nothing plugin not found
