@@ -31,7 +31,10 @@ process.env.NODE_ENV = process.env.NODE_ENV || "development";
 const paths = require("react-app-rewired/scripts/utils/paths");
 require(paths.scriptVersion + "/config/env");
 
-const webpackConfig = paths.scriptVersion + "/config/webpack.config.dev";
+const webpackConfig = (process.env.NODE_ENV === 'production')
+    ? paths.scriptVersion + '/config/webpack.config.prod'
+    : paths.scriptVersion + '/config/webpack.config.dev';
+    
 const config = require(webpackConfig);
 const override = require(paths.configOverrides);
 const overrideFn =
