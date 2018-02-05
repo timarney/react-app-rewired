@@ -24,7 +24,6 @@ const modulePath = path.join(
   require.resolve(`${scriptVersion}/package.json`),
   '..'
 );
-const projectDir = path.resolve(fs.realpathSync(process.cwd()));
 
 const paths = require(modulePath + '/config/paths');
 
