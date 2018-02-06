@@ -298,7 +298,7 @@ React-app-rewired imports your config-overrides.js file without the '.js' extens
 If you have several custom overrides using a directory allows you to be able to put each override in a separate file. An example template that demonstrates this can be found in [Guria/rewired-ts-boilerplate](https://github.com/Guria/rewired-ts-boilerplate/tree/master/config-overrides) at Github.
 
 #### 4) Specify config-overrides location from command line
-If you need to change the location of your config-overrides.js (or directory) you can pass a command line option --config-overrides <location> to the react-app-rewired script.
+If you need to change the location of your config-overrides.js you can pass a command line option --config-overrides <path> to the react-app-rewired script.
 
 # Community Maintained Rewires
 
