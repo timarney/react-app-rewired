@@ -13,12 +13,19 @@ npm install react-app-rewired react-app-rewire-eslint --save
 ```javascript
 const rewireEslint = require('react-app-rewire-eslint');
 
+function overrideEslintOptions(options) {
+  // do stuff with the eslint options...
+  return options;
+}
+
 /* config-overrides.js */
 module.exports = function override(config, env) {
-  config = rewireEslint(config, env);
+  config = rewireEslint(config, env, overrideEslintOptions);
   return config;
 }
 ```
+
+Note that the `overrideEslintOptions` argument is optional.  It allows you to make additional changes to the eslint options that are not made already by `rewireEslint`.
 
 ## 3) Create your own .eslintrc in the root directory
 
