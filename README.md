@@ -312,6 +312,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-glamorous-displayname](https://github.com/CarlRosell/react-app-rewire-glamorous-displayname) by [@CarlRosell](https://github.com/CarlRosell)
 * [react-app-rewire-import](https://github.com/brianveltman/react-app-rewire-import) by [@brianveltman](https://github.com/brianveltman)
 * [react-app-rewire-inline-import-graphql-ast](https://github.com/detrohutt/react-app-rewire-inline-import-graphql-ast) by [@detrohutt](https://github.com/detrohutt)
+* [react-app-rewire-react-intl](https://github.com/clemencov/react-app-rewire-react-intl) by [@clemencov](https://github.com/clemencov)
 
 ## Webpack plugins
 
