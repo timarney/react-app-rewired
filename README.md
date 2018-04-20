@@ -331,6 +331,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-typescript-babel-preset](https://github.com/strothj/react-app-rewire-typescript-babel-preset) by [@strothj](https://github.com/strothj)
 * [react-app-rewire-css-modules](https://github.com/codebandits/react-app-rewire-css-modules) by [@lnhrdt](https://github.com/lnhrdt)
 * [react-app-rewire-less-modules](https://github.com/andriijas/react-app-rewire-less-modules) by [@andriijas](https://github.com/andriijas)
+* [react-app-rewire-stylus-modules](https://github.com/marcopeg/react-app-rewire-stylus-modules) by [@marcopeg](https://github.com/marcopeg)
 * [react-app-rewire-svg-react-loader](https://github.com/codebandits/react-app-rewire-svg-react-loader) by [@lnhrdt](https://github.com/lnhrdt)
 * [react-app-rewire-bem-i18n-loader](https://github.com/maxvipon/react-app-rewire-bem-i18n-loader) by [@maxvipon](https://github.com/maxvipon)
 * [react-app-rewire-babel-loader](https://github.com/dashed/react-app-rewire-babel-loader) by [@dashed](https://github.com/dashed)
