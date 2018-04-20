@@ -17,7 +17,7 @@ const getLoader = function(rules, matcher) {
   rules.some(rule => {
     return (loader = matcher(rule)
       ? rule
-      : getLoader(rule.use || rule.oneOf || [], matcher));
+      : getLoader(rule.use || rule.oneOf || (Array.isArray(rule.loader) && rule.loader) || [], matcher);
   });
 
   return loader;
