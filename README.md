@@ -322,6 +322,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-modernizr](https://github.com/ctrlplusb/react-app-rewire-modernizr) by [@ctrlplusb](https://github.com/ctrlplusb)
 * [react-app-rewire-preload-plugin](https://github.com/lwd-technology/react-app-rewire-preload-plugin) by [@icopp](https://github.com/icopp)
 * [react-app-rewire-provide-plugin](https://github.com/lwd-technology/react-app-rewire-provide-plugin) by [@icopp](https://github.com/icopp)
+* [react-app-rewire-inline-source](https://github.com/marcopeg/react-app-rewire-inline-source) by [@marcopeg](https://github.com/marcopeg)
 
 ## Loaders
 
