@@ -16,7 +16,7 @@ const createJestConfig = require(createJestConfigPath);
 const config = createJestConfig(
   relativePath => path.resolve(paths.appPath, "node_modules", paths.scriptVersion, relativePath),
   path.resolve(paths.appSrc, ".."),
-  false
+  paths.srcPaths
 );
 // restore overrides for rewireJestConfig
 packageJson.jest = jestOverrides;
