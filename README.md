@@ -160,7 +160,7 @@ module.exports = createRewire;
 ```
 
 ## Extended Configuration Options
-By default, the `override-config.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
+By default, the `config-overrides.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
 
 This example implementation is used to demonstrate using each of the object require functions. In the example, the functions:
 * use the react-app-rewire-less package to add less support to your project
