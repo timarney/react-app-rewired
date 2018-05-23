@@ -319,6 +319,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 
 * [react-app-rewire-appcache-plugin](https://github.com/lwd-technology/react-app-rewire-appcache-plugin) by [@jtheis85](https://github.com/jtheis85)
 * [react-app-rewire-define-plugin](https://github.com/lwd-technology/react-app-rewire-define-plugin) by [@jtheis85](https://github.com/jtheis85)
+* [react-app-rewire-favicons-plugin](https://github.com/rickycook/react-app-rewire-favicons-plugin) by [@rickycook](https://github.com/rickycook)
 * [react-app-rewire-imagemin-plugin](https://github.com/lwd-technology/react-app-rewire-imagemin-plugin) by [@jtheis85](https://github.com/jtheis85)
 * [react-app-rewire-modernizr](https://github.com/ctrlplusb/react-app-rewire-modernizr) by [@ctrlplusb](https://github.com/ctrlplusb)
 * [react-app-rewire-preload-plugin](https://github.com/lwd-technology/react-app-rewire-preload-plugin) by [@jtheis85](https://github.com/jtheis85)
