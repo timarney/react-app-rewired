@@ -328,7 +328,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-webpack-bundle-analyzer](https://github.com/byzyk/react-app-rewire-webpack-bundle-analyzer) by [@byzyk](https://github.com/byzyk)
 
 ## Loaders
-
+* [react-app-rewire-postcss](https://github.com/csstools/react-app-rewire-postcss)
 * [react-app-rewire-nearley](https://github.com/lwd-technology/react-app-rewire-nearley) by [@jtheis85](https://github.com/jtheis85)
 * [react-app-rewire-coffeescript](https://github.com/stevefan1999/react-app-rewire-coffeescript) by [@stevefan1999](https://github.com/stevefan1999)
 * [react-app-rewire-typescript](https://github.com/lwd-technology/react-app-rewire-typescript) by [@jtheis85](https://github.com/jtheis85)
@@ -347,7 +347,6 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-create-react-library](https://github.com/osdevisnot/react-app-rewire-create-react-library) by [@osdevisnot](https://github.com/osdevisnot)
 * [react-app-rewire-react-library](https://github.com/osdevisnot/react-app-rewire-contrib/tree/master/packages/react-app-rewire-react-library) by [@osdevisnot](https://github.com/osdevisnot)
 * [react-app-rewire-vendor-splitting](https://github.com/andriijas/react-app-rewire-vendor-splitting) by [@andriijas](https://github.com/andriijas)
-
 * [react-app-rewired with Inferno](packages/react-app-rewired/examples/inferno.md)
 * [react-app-rewired with react-styleguideist](packages/react-app-rewired/examples/react-styleguidist.md)
 * [react-app-rewired with react-hot-loader](https://github.com/cdharris/react-app-rewire-hot-loader) by [@cdharris](https://github.com/cdharris)
