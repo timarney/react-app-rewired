@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewire-less",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5"
+    "less": "^3.0.2",
+    "less-loader": "^4.1.0"
   },
   "peerDependencies": {
-    "react-app-rewired": "^1.2.1"
+    "react-app-rewired": "^1.5.2"
   }
 }
