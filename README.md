@@ -45,7 +45,7 @@ module.exports = function override(config, env) {
 |   +-- src
 ```
 
-**Note:** You can use one of the default rewires (see the [packages](/packages) dir) or [injectBabelPlugin](https://github.com/timarney/react-app-rewired#utilities-injectbabelplugin)
+**Note:** You can use one of the default rewires (see the [packages](/packages) dir) or [injectBabelPlugin](https://github.com/timarney/react-app-rewired#1-injectbabelplugin)
 
 #### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts
 ```diff
