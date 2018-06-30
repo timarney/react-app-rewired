@@ -1,6 +1,6 @@
 # Deprecated
 
-This package has been deprecated as Create React App has [documented instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc) on how to setup without ejecting.
+This package has been deprecated and moved to [react-app-rewire-scss](https://github.com/aze3ma/react-app-rewire-scss).
 
 # Rewire create-react-app to use SASS!
 
