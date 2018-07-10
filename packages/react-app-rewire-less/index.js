@@ -18,6 +18,8 @@ function createRewireLess(lessLoaderOptions = {}) {
 
     let lessRules;
     if (env === "production") {
+      const lessLoader = cssRules.loader || cssRules.use
+
       lessRules = {
         test: lessExtension,
         loader: [
@@ -25,7 +27,7 @@ function createRewireLess(lessLoaderOptions = {}) {
           //       which we cannot do, so some things like relative publicPath
           //       will not work.
           //       https://github.com/timarney/react-app-rewired/issues/33
-          ...cssRules.loader,
+          ...lessLoader,
           { loader: "less-loader", options: lessLoaderOptions }
         ]
       };
