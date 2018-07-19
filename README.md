@@ -345,6 +345,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-svgr](https://github.com/gitim/react-app-rewire-svgr) by [@gitim](https://github.com/gitim)
 * [react-app-rewire-yaml](https://github.com/hsz/react-app-rewire-yaml) by [@hsz](https://github.com/hsz)
 * [react-app-rewire-scss](https://github.com/aze3ma/react-app-rewire-scss) by [@aze3ma](https://github.com/aze3ma)
+* [react-app-rewire-external-svg-loader](https://github.com/moxystudio/react-app-rewire-external-svg-loader) by [@moxystudio](https://github.com/moxystudio)
 
 ## Other
 
