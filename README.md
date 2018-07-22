@@ -1,7 +1,7 @@
- 
+
 [![npm version](https://img.shields.io/npm/v/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
 [![npm monthly downloads](https://img.shields.io/npm/dm/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
- 
+
  <img alt="react-app-rewired" src="https://github.com/timarney/react-app-rewired/raw/master/assets/react-app-rewired.png" />
 
 # Rewire Your App
@@ -73,7 +73,7 @@ $ npm run build
 ```
 
 
-## Utilities 
+## Utilities
 
 #### 1) injectBabelPlugin
 
@@ -88,16 +88,16 @@ const {injectBabelPlugin} = require('react-app-rewired');
 module.exports = function override(config, env) {
   // add a plugin
   config = injectBabelPlugin('emotion/babel',config)
-  
+
   // use the Preact rewire
   if (env === "production") {
     console.log("⚡ Production build with Preact");
     config = rewirePreact(config, env);
   }
-  
+
   // use the MobX rewire
   config = rewireMobX(config,env);
-  
+
   return config;
 }
 ```
@@ -105,8 +105,8 @@ module.exports = function override(config, env) {
 #### 2) compose(after v1.3.4)
 
 You can use this util to compose rewires.
-> A functional programming utility, performs `right-to-left` function composition.     
-More detail you can see [ramda](http://ramdajs.com/docs/#compose) or [redux](http://redux.js.org/docs/api/compose.html#composefunctions)  
+> A functional programming utility, performs `right-to-left` function composition.
+More detail you can see [ramda](http://ramdajs.com/docs/#compose) or [redux](http://redux.js.org/docs/api/compose.html#composefunctions)
 
 Before:
 ```javascript
@@ -115,7 +115,7 @@ module.exports = function override(config, env) {
   config = rewireLess(config, env);
   config = rewirePreact(config, env);
   config = rewireMobX(config, env);
-  
+
   return config;
 }
 ```
@@ -130,7 +130,7 @@ module.exports = compose(
   rewireMobx
   ...
 )
-//  custom config 
+//  custom config
 module.exports = function(config, env){
   const rewires = compose(
     rewireLess,
@@ -143,11 +143,11 @@ module.exports = function(config, env){
   return rewires(config, env);
 }
 ```
-Some change with rewire, if you want to add some `extra param` for `rewire`  
-1. Optional params:  
-you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js)  
+Some change with rewire, if you want to add some `extra param` for `rewire`
+1. Optional params:
+you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js)
 
-2. Required params:  
+2. Required params:
 ```javascript
 // rewireSome.js
 function createRewire(requiredParams){
@@ -352,6 +352,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewired with Inferno](packages/react-app-rewired/examples/inferno.md)
 * [react-app-rewired with react-styleguideist](packages/react-app-rewired/examples/react-styleguidist.md)
 * [react-app-rewired with react-hot-loader](https://github.com/cdharris/react-app-rewire-hot-loader) by [@cdharris](https://github.com/cdharris)
+* [react-app-rewire-aliases](https://github.com/aze3ma/react-app-rewire-aliases) by [@aze3ma](https://github.com/aze3ma)
 
 # Why This Project Exists
 
