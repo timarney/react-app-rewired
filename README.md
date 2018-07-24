@@ -355,6 +355,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewired with Inferno](packages/react-app-rewired/examples/inferno.md)
 * [react-app-rewired with react-styleguideist](packages/react-app-rewired/examples/react-styleguidist.md)
 * [react-app-rewired with react-hot-loader](https://github.com/cdharris/react-app-rewire-hot-loader) by [@cdharris](https://github.com/cdharris)
+* [react-app-rewire-aliases](https://github.com/aze3ma/react-app-rewire-aliases) by [@aze3ma](https://github.com/aze3ma)
 
 # Why This Project Exists
 
