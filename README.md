@@ -4,7 +4,9 @@
 
  <img alt="react-app-rewired" src="https://github.com/timarney/react-app-rewired/raw/master/assets/react-app-rewired.png" />
 
-# Rewire Your App
+# Rewire Your React App
+
+Compatible with React xx up to xx. _NOT compatible with react-native_
 
 Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.
 
