@@ -1,6 +1,4 @@
 {
-  "name": "react-app-rewired",
-  "version": "1.5.2",
   "private": true,
   "scripts": {
     "postinstall": "lerna bootstrap",
