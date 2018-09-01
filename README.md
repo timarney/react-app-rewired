@@ -46,7 +46,7 @@ module.exports = function override(config, env) {
 |   +-- src
 ```
 
-**Note:** You can use one of the default rewires (see the [packages](/packages) dir) or [injectBabelPlugin](https://github.com/timarney/react-app-rewired#1-injectbabelplugin)
+**Note:** You can use one of the default rewires (see the [packages](/packages) dir) or [injectBabelPlugin](https://github.com/timarney/react-app-rewired#1-injectbabelplugin).
 
 #### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts
 ```diff
@@ -161,6 +161,14 @@ module.exports = createRewire;
 ```
 
 ## Extended Configuration Options
+You can set a custom path for `config-overrides.js`. If you (for instance) wanted to use a 3rd-party `config-overrides.js` that exists in `node_modules`, you could add the following to your `package.json`:
+
+```json
+"config-overrides-path": "node_modules/ideal-rewires"
+```
+
+In this case, the rewire has been installed from [ideal-rewires](https://github.com/harrysolovay/ideal-rewires).
+
 By default, the `config-overrides.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
 
 This example implementation is used to demonstrate using each of the object require functions. In the example, the functions:
