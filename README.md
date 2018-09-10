@@ -158,6 +158,19 @@ function createRewire(requiredParams){
 }
 module.exports = createRewire;
 ```
+#### 3) removeLoader(after v1.5.2)
+Removing a Loader can be done via the `removeLoader(config, loaderName)` function. 
+```javascript
+const { removeLoader } = require('react-app-rewired');
+
+/* config-overrides.js */
+module.exports = function override(config, env) {
+  // remove a loader
+  removeLoader(config,  "ts-loader");
+
+  return config;
+}
+```
 
 ## Extended Configuration Options
 You can set a custom path for `config-overrides.js`. If you (for instance) wanted to use a 3rd-party `config-overrides.js` that exists in `node_modules`, you could add the following to your `package.json`:
