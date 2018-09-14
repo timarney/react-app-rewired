@@ -163,10 +163,8 @@ module.exports = createRewire;
 You can set a custom path for `config-overrides.js`. If you (for instance) wanted to use a 3rd-party `config-overrides.js` that exists in `node_modules`, you could add the following to your `package.json`:
 
 ```json
-"config-overrides-path": "node_modules/ideal-rewires"
+"config-overrides-path": "node_modules/some-preconfigured-rewire"
 ```
-
-In this case, the rewire has been installed from [ideal-rewires](https://github.com/harrysolovay/ideal-rewires).
 
 By default, the `config-overrides.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
 
@@ -365,6 +363,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewired with react-hot-loader](https://github.com/cdharris/react-app-rewire-hot-loader) by [@cdharris](https://github.com/cdharris)
 * [react-app-rewire-aliases](https://github.com/aze3ma/react-app-rewire-aliases) by [@aze3ma](https://github.com/aze3ma)
 * [react-app-rewire-blockstack](https://github.com/harrysolovay/react-app-rewire-blockstack) by [@harrysolovay](https://github.com/harrysolovay)
+* [ideal-rewires](https://github.com/harrysolovay/ideal-rewires) by [@harrysolovay](https://github.com/harrysolovay)
 
 # Why This Project Exists
 
