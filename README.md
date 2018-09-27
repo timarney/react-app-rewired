@@ -1,12 +1,12 @@
 
+# Rewire Your App
+
+> ⚠️ ⚠️This repo doesn't support CRA 2.0 see: https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507 
+
 [![npm version](https://img.shields.io/npm/v/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
 [![npm monthly downloads](https://img.shields.io/npm/dm/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
 
  <img alt="react-app-rewired" src="https://github.com/timarney/react-app-rewired/raw/master/assets/react-app-rewired.png" />
-
-# Rewire Your App
-
-> ⚠️ ⚠️This repo doesn't support CRA 2.0 see: https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507 
 
 Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.
 
