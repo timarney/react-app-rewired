@@ -6,6 +6,8 @@
 
 # Rewire Your App
 
+> ⚠️ ⚠️This repo doesn't support CRA 2.0 see: https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507 
+
 Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.
 
 All the benefits of create-react-app without the limitations of "no config". You can add plugins, loaders whatever you need.
