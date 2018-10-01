@@ -8,7 +8,7 @@ const loaderNameMatches = function(rule, loader_name) {
 };
 
 const babelLoaderMatcher = function(rule) {
-  return loaderNameMatches(rule, 'babel-loader');
+  return loaderNameMatches(rule, 'babel-preset-react-app');
 };
 
 const getLoader = function(rules, matcher) {
@@ -30,7 +30,7 @@ const getBabelLoader = function(rules) {
 const injectBabelPlugin = function(pluginName, config) {
   const loader = getBabelLoader(config.module.rules);
   if (!loader) {
-    console.log('babel-loader not found');
+    console.log('babel-preset-react-app not found');
     return config;
   }
   // Older versions of webpack have `plugins` on `loader.query` instead of `loader.options`.
