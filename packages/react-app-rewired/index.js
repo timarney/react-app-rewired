@@ -23,6 +23,30 @@ const getLoader = function(rules, matcher) {
   return loader;
 };
 
+const removeLoader = (config, loader) => {
+  const rules = config.module.rules
+  const LoaderMatcher = function(rule) {
+    return loaderNameMatches(rule, loader);
+  };
+  let loaderObj = getLoader(rules, LoaderMatcher)
+
+  const removeLoaderRecursive = (rules) => {
+    rules.forEach((rule,index) => {
+      if(rule.loader){
+        if(loaderObj.loader == rule.loader){
+          rules.splice(index,1)
+        }
+      }else if(rule.use){
+        removeLoaderRecursive(rule.use)
+      }else if(rule.oneOf){
+        removeLoaderRecursive(rule.oneOf)
+      }
+    })
+  };
+
+  removeLoaderRecursive(rules)
+}
+
 const getBabelLoader = function(rules) {
   return getLoader(rules, babelLoaderMatcher);
 };
@@ -53,6 +77,7 @@ const compose = function(...funcs) {
 
 module.exports = {
   getLoader,
+  removeLoader,
   loaderNameMatches,
   getBabelLoader,
   injectBabelPlugin,
