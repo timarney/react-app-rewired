@@ -1,7 +1,16 @@
 
 # Rewire Your App
 
-> ⚠️ ⚠️This repo doesn't support CRA 2.0 see: https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507 
+> ⚠️ ⚠️This repo doesn't support CRA 2.0 see: https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507
+
+You can try https://github.com/arackaf/customize-cra
+
+But remember...
+
+"Stuff can break" — Dan Abramov
+https://twitter.com/dan_abramov/status/1045809734069170176
+
+
 
 [![npm version](https://img.shields.io/npm/v/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
 [![npm monthly downloads](https://img.shields.io/npm/dm/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
