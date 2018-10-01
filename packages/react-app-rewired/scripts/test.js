@@ -29,5 +29,11 @@ require.cache[require.resolve(createJestConfigPath)].exports =
 if (paths.customScriptsIndex > -1) {
   process.argv.splice(paths.customScriptsIndex, 2);
 }
+// override paths in memory
+if (paths.pathsOverrides) {
+  const pathsOverridesFn = require(paths.pathsOverrides);
+  require.cache[require.resolve(paths.scriptVersion + '/config/paths')].exports =
+    pathsOverridesFn(paths.originPaths, process.env.NODE_ENV);
+}
 // run original script
 require(paths.scriptVersion + '/scripts/test');
