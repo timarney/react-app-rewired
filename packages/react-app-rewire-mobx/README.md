@@ -22,5 +22,6 @@ module.exports = function override(config, env) {
 
 # Notes
 
+* By default, decorators will need to follow `export` statements vs the legacy behavior or preceeding
 * [Remove experimentalDecorators warning in VSCode](https://ihatetomatoes.net/how-to-remove-experimentaldecorators-warning-in-vscode)
 

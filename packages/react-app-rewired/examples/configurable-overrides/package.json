@@ -12,6 +12,6 @@
     "start": "react-app-rewired start --config-overrides ./custom-overides"
   },
   "devDependencies": {
-    "babel-plugin-transform-decorators-legacy": "^1.3.4"
+    "@babel/plugin-proposal-decorators": "7.1.2"
   }
 }
