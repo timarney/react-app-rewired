@@ -5,7 +5,7 @@
 
 You can try [customize-cra](https://github.com/arackaf/customize-cra)
 
-or you can try [react-scripts-rewired]  (https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md)
+or you can try [react-scripts-rewired](https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md)
 
 But remember...
 
