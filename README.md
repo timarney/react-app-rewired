@@ -1,11 +1,11 @@
 
 # Rewire Your App
 
-> ⚠️ ⚠️This repo doesn't support CRA 2.0 see: [2.0 Discussion](https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507)
+> ⚠️ ⚠️The built-in rewirers provided by this project dont support CRA 2.0 see: [2.0 Discussion](https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507)
 
-You can try [customize-cra](https://github.com/arackaf/customize-cra)
+You can try [customize-cra](https://github.com/arackaf/customize-cra) for a set of CRA 2.0 compatible rewirers,
 
-or you can try [react-scripts-rewired](https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md)
+or you can try [react-scripts-rewired](https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md) for a fork of this project that aims to support CRA 2.0
 
 But remember...
 
