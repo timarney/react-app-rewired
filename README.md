@@ -5,6 +5,8 @@
 
 You can try [customize-cra](https://github.com/arackaf/customize-cra)
 
+or [Rescripts](https://github.com/rescripts/rescripts), an alternative framework for extending CRA configurations (supports 2.0+).
+
 or you can try [react-scripts-rewired](https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md)
 
 or you can also try [craco](https://github.com/sharegate/craco)
