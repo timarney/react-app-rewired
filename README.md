@@ -5,7 +5,7 @@
 
 ⚠️The built-in rewirers provided by this project don't support CRA 2.0 see: [2.0 Discussion](https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507)
 
-As of CRA 2.0 maintenance of this repo minimal see alternatives for 2.0 supported repos.
+As of CRA 2.0 maintenance of this repo minimal, see alternatives for 2.0 supported repos.
 
 
 ## Alternatives 
