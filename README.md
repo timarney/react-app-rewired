@@ -1,7 +1,10 @@
 
 # Rewire Your App
 
-> ⚠️ ⚠️The built-in rewirers provided by this project don't support CRA 2.0 see: [2.0 Discussion](https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507)
+🚨CRA >=2.1.2 breaking issue [2.1.2](https://github.com/timarney/react-app-rewired/issues/343)
+
+⚠️The built-in rewirers provided by this project don't support CRA 2.0 see: [2.0 Discussion](https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507) 
+
 
 You can try [customize-cra](https://github.com/arackaf/customize-cra) for a set of CRA 2.0 compatible rewirers,
 or any of the alternative projects and forks that aim to support 2.0:
