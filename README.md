@@ -1,12 +1,8 @@
-
 # Rewire Your App
 
-🚨CRA >=2.1.2 breaking issue [2.1.2](https://github.com/timarney/react-app-rewired/issues/343)
-
-⚠️The built-in rewirers provided by this project don't support CRA 2.0 see: [2.0 Discussion](https://github.com/timarney/react-app-rewired/issues/162#issuecomment-417872507)
+🚨CRA >=2.1.2 breaking issue [2.1.2](https://github.com/timarney/react-app-rewired/issues/343) new release coming soon.
 
 As of CRA 2.0 maintenance of this repo minimal, see alternatives for 2.0 supported repos.
-
 
 ## Alternatives 
 You can try [customize-cra](https://github.com/arackaf/customize-cra) for a set of CRA 2.0 compatible rewirers,
@@ -94,93 +90,6 @@ $ npm start
 $ npm run build
 ```
 
-
-## Utilities
-
-#### 1) injectBabelPlugin
-
-Adding a Babel plugin can be done via the `injectBabelPlugin(pluginName, config)` function.  You can also use the "rewire" packages from this repo or listed below to do common config modifications.
-
-```javascript
-const rewireMobX = require('react-app-rewire-mobx');
-const rewirePreact = require('react-app-rewire-preact');
-const {injectBabelPlugin} = require('react-app-rewired');
-
-/* config-overrides.js */
-module.exports = function override(config, env) {
-  // add a plugin
-  config = injectBabelPlugin('emotion/babel',config)
-
-  // use the Preact rewire
-  if (env === "production") {
-    console.log("⚡ Production build with Preact");
-    config = rewirePreact(config, env);
-  }
-
-  // use the MobX rewire
-  config = rewireMobX(config,env);
-
-  return config;
-}
-```
-
-#### 2) compose(after v1.3.4)
-
-You can use this util to compose rewires.
-> A functional programming utility, performs `right-to-left` function composition.
-More detail you can see [ramda](http://ramdajs.com/docs/#compose) or [redux](http://redux.js.org/docs/api/compose.html#composefunctions)
-
-Before:
-```javascript
-/* config-overrides.js */
-module.exports = function override(config, env) {
-  config = rewireLess(config, env);
-  config = rewirePreact(config, env);
-  config = rewireMobX(config, env);
-
-  return config;
-}
-```
-After use `compose`:
-```javascript
-/* config-overrides.js */
-const { compose } = require('react-app-rewired');
-
-module.exports = compose(
-  rewireLess,
-  rewirePreact,
-  rewireMobx
-  ...
-)
-//  custom config
-module.exports = function(config, env){
-  const rewires = compose(
-    rewireLess,
-    rewirePreact,
-    rewireMobx
-    ...
-  );
-  // do custom config
-  // ...
-  return rewires(config, env);
-}
-```
-Some change with rewire, if you want to add some `extra param` for `rewire`
-1. Optional params:
-you can see [react-app-rewire-less](https://github.com/timarney/react-app-rewired/blob/master/packages/react-app-rewire-less/index.js)
-
-2. Required params:
-```javascript
-// rewireSome.js
-function createRewire(requiredParams){
-  return function rewire(config, env){
-    ///
-    return config
-  }
-}
-module.exports = createRewire;
-```
-
 ## Extended Configuration Options
 You can set a custom path for `config-overrides.js`. If you (for instance) wanted to use a 3rd-party `config-overrides.js` that exists in `node_modules`, you could add the following to your `package.json`:
 
@@ -191,18 +100,13 @@ You can set a custom path for `config-overrides.js`. If you (for instance) wante
 By default, the `config-overrides.js` file exports a single function to use when customising the webpack configuration for compiling your react app in development or production mode. It is possible to instead export an object from this file that contains up to three fields, each of which is a function. This alternative form allows you to also customise the configuration used for Jest (in testing), and for the Webpack Dev Server itself.
 
 This example implementation is used to demonstrate using each of the object require functions. In the example, the functions:
-* use the react-app-rewire-less package to add less support to your project
 * have some tests run conditionally based on `.env` variables
 * set the https certificates to use for the Development Server, with the filenames specified in `.env` file variables.
 ```javascript
 module.exports = {
   // The Webpack config to use when compiling your react app for development or production.
   webpack: function(config, env) {
-    // ...add your webpack config customisation, rewires, etc...
-    // Example: add less support to your app.
-    const rewireLess = require('react-app-rewire-less');
-    config = rewireLess(config, env);
-
+    // ...add your webpack config
     return config;
   },
   // The Jest config to use when running your jest tests - note that the normal rewires do not
@@ -328,7 +232,7 @@ If you have several custom overrides using a directory allows you to be able to 
 #### 4) Specify config-overrides location from command line
 If you need to change the location of your config-overrides.js you can pass a command line option --config-overrides <path> to the react-app-rewired script.
 
-# Community Maintained Rewires
+# Version 1.X Community Maintained Rewires (Check the plugin repo for 2.0 support)
 
 ## Babel plugins
 
