@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "cross-spawn": "^5.1.0",
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "semver": "^5.6.0"
   },
   "repository": {
     "type": "git",

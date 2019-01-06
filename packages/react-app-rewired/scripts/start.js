@@ -1,19 +1,28 @@
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-const paths = require("./utils/paths");
+const semver = require('semver');
+
+const { scriptVersion } = require('./utils/paths');
 const overrides = require('../config-overrides');
-const webpackConfigPath = paths.scriptVersion + "/config/webpack.config.dev";
-const devServerConfigPath = paths.scriptVersion + "/config/webpackDevServer.config.js";
+const scriptPkg = require(`${scriptVersion}/package.json`);
 
-// load original configs
+// CRA 2.1.2 switched to using a webpack config factory
+// https://github.com/facebook/create-react-app/pull/5722
+// https://github.com/facebook/create-react-app/releases/tag/v2.1.2
+const isWebpackFactory = semver.gte(scriptPkg && scriptPkg.version, '2.1.2');
+
+const webpackConfigPath = `${scriptVersion}/config/webpack.config${!isWebpackFactory ? '.dev' : ''}`;
+const devServerConfigPath = `${scriptVersion}/config/webpackDevServer.config.js`;
 const webpackConfig = require(webpackConfigPath);
 const devServerConfig = require(devServerConfigPath);
+
 // override config in memory
-require.cache[require.resolve(webpackConfigPath)].exports =
-  overrides.webpack(webpackConfig, process.env.NODE_ENV);
+require.cache[require.resolve(webpackConfigPath)].exports = isWebpackFactory
+  ? (env) => overrides.webpack(webpackConfig(env), env)
+  : overrides.webpack(webpackConfig, process.env.NODE_ENV);
 
 require.cache[require.resolve(devServerConfigPath)].exports =
   overrides.devServer(devServerConfig, process.env.NODE_ENV);
 
 // run original script
-require(paths.scriptVersion + "/scripts/start");
+require(`${scriptVersion}/scripts/start`);
