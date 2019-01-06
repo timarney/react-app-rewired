@@ -11,9 +11,12 @@ All the benefits of create-react-app without the limitations of "no config". You
 
 
 # Rewire Your App ☠
-⚠️ As of Create React App 2.0 this repo is "lightly" maintained mostly by the community at this point. 
 
-By using this package your taking control of the config.  
+As of Create React App 2.0 this repo is "lightly" maintained mostly by the community at this point. 
+
+⚠️ **Please Note:**
+
+> By doing this you're breaking the ["guarantees"](https://github.com/facebookincubator/create-react-app/issues/99#issuecomment-234657710) that CRA provides. That is to say you now "own" the configs. **No support** will be provided. Proceed with caution.
 
 "Stuff can break" — Dan Abramov
 https://twitter.com/dan_abramov/status/1045809734069170176
@@ -32,15 +35,9 @@ or any of the alternative projects and forks that aim to support 2.0:
 - [craco](https://github.com/sharegate/craco)
 
 
-
-
-> All you have to do is create your app using [create-react-app](https://github.com/facebookincubator/create-react-app) and then rewire it.
-
-⚠️ **Please Note:**
-
-> By doing this you're breaking the ["guarantees"](https://github.com/facebookincubator/create-react-app/issues/99#issuecomment-234657710) that CRA provides. That is to say you now "own" the configs. **No support** will be provided. Proceed with caution.
-
 # How to rewire your create-react-app project
+
+> Create your app using [create-react-app](https://github.com/facebookincubator/create-react-app) and then rewire it.
 
 
 #### 1) Install react-app-rewired
