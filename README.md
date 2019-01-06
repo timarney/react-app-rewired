@@ -1,18 +1,27 @@
+🚨Version 2.0 removes the rewire helper functions
+
+[![npm version](https://img.shields.io/npm/v/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
+[![npm monthly downloads](https://img.shields.io/npm/dm/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
+
+ <img alt="react-app-rewired" src="https://github.com/timarney/react-app-rewired/raw/master/assets/react-app-rewired.png" />
+ 
+ Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.
+
+All the benefits of create-react-app without the limitations of "no config". You can add plugins, loaders whatever you need.
+
+
 # Rewire Your App ☠
-⚠️By using this package your taking control of the config 
+⚠️ As of Create React App 2.0 this repo is "lightly" maintained mostly by the community at this point. 
+
+By using this package your taking control of the config.  
 
 "Stuff can break" — Dan Abramov
 https://twitter.com/dan_abramov/status/1045809734069170176
 
 
-🚨Version 2.0 removes the rewire helper functions
-
-⚠️As of Create React App 2.0 this repo is "lightly" maintained mostly by the community at this point.  
-
 <hr>
-Note: I personally use [next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle) which both support custom Webpack out of the box.
 
-⚠️This repo does not support questions about how to configure Webpack
+**Note:** I personally use [next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle) which both support custom Webpack out of the box.
 
 ## Alternatives 
 You can try [customize-cra](https://github.com/arackaf/customize-cra) for a set of CRA 2.0 compatible rewirers,
@@ -24,18 +33,6 @@ or any of the alternative projects and forks that aim to support 2.0:
 
 
 
-
-
-
-
-[![npm version](https://img.shields.io/npm/v/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
-[![npm monthly downloads](https://img.shields.io/npm/dm/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
-
- <img alt="react-app-rewired" src="https://github.com/timarney/react-app-rewired/raw/master/assets/react-app-rewired.png" />
-
-Tweak the create-react-app webpack config(s) without using 'eject' and without creating a fork of the react-scripts.
-
-All the benefits of create-react-app without the limitations of "no config". You can add plugins, loaders whatever you need.
 
 > All you have to do is create your app using [create-react-app](https://github.com/facebookincubator/create-react-app) and then rewire it.
 
