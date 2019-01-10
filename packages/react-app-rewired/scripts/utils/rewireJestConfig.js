@@ -1,8 +1,14 @@
 'use strict';
 
+const path = require('path');
 const paths = require('./paths');
 
 module.exports = (config) => {
+  Object.keys(config.transform).forEach((key) => {
+    if (config.transform[key].endsWith('babelTransform.js')) {
+      config.transform[key] = path.resolve(__dirname + '/babelTransform.js');
+    }
+  });
   const overrides = Object.assign({}, require(paths.appPackageJson).jest);
 
   // Jest configuration in package.json will be added to the the default config
