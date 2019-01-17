@@ -11,20 +11,30 @@ const scriptPkg = require(`${scriptVersion}/package.json`);
 // https://github.com/facebook/create-react-app/releases/tag/v2.1.2
 const isWebpackFactory = semver.gte(scriptPkg && scriptPkg.version, '2.1.2');
 
-const webpackConfigPath = `${scriptVersion}/config/webpack.config${!isWebpackFactory ? '.prod' : ''}`;
-const webpackConfig = require(webpackConfigPath);
+let webpackConfigPath;
+let webpackConfig;
+
+if (isWebpackFactory) {
+  webpackConfigPath = `${scriptVersion}/config/webpack.config`;
+  webpackConfig = require(webpackConfigPath)('production');
+} else {
+  webpackConfigPath = `${scriptVersion}/config/webpack.config.prod`;
+  webpackConfig = require(webpackConfigPath);
+}
 
 // override config in memory
 require.cache[require.resolve(webpackConfigPath)].exports = isWebpackFactory
-  ? (env) => overrides.webpack(webpackConfig(env), env)
+  ? env => overrides.webpack(webpackConfig(env), env)
   : overrides.webpack(webpackConfig, process.env.NODE_ENV);
 
 const pathsConfigPath = `${scriptVersion}/config/paths.js`;
 const pathsConfig = require(pathsConfigPath);
 
 // override paths in memory
-require.cache[require.resolve(pathsConfigPath)].exports =
-  overrides.paths(pathsConfig, process.env.NODE_ENV);
+require.cache[require.resolve(pathsConfigPath)].exports = overrides.paths(
+  pathsConfig,
+  process.env.NODE_ENV
+);
 
 // run original script
 require(`${scriptVersion}/scripts/build`);
