@@ -24,5 +24,12 @@ require.cache[require.resolve(webpackConfigPath)].exports = isWebpackFactory
 require.cache[require.resolve(devServerConfigPath)].exports =
   overrides.devServer(devServerConfig, process.env.NODE_ENV);
 
+const pathsConfigPath = `${scriptVersion}/config/paths.js`;
+const pathsConfig = require(pathsConfigPath);
+
+// override paths in memory
+require.cache[require.resolve(pathsConfigPath)].exports =
+  overrides.paths(pathsConfig, process.env.NODE_ENV);
+
 // run original script
 require(`${scriptVersion}/scripts/start`);

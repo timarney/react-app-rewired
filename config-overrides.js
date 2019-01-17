@@ -22,9 +22,12 @@ const devServer = override.devServer || override.devserver
 
 const jest = override.jest || ((config) => config);
 
+const pathsOverride = override.paths || ((paths, env) => paths);
+
 // normalized overrides functions
 module.exports = {
   webpack,
   devServer,
-  jest
+  jest,
+  paths: pathsOverride
 };
