@@ -209,7 +209,7 @@ require('./index.tsx');
 3. Override the `react-dev-utils/checkRequiredFiles` function to always return true (causing create-react-app to no longer try to enforce that the entry file must exist).
 
 #### 2) Custom scripts versions
-It is possible to use a custom version of the `react-scripts` package with react-app-rewired by specifying the name of the scripts package in the command line option `--scripts-version`.
+It is possible to use a custom version of the `react-scripts` package with react-app-rewired by specifying the name of the scripts package in the command line option `--scripts-version` or setting `REACT_SCRIPTS_VERSION=<...>` via the environment.
 
 A working example for using the scripts version option is:
 ```json
