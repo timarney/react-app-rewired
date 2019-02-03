@@ -296,6 +296,29 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [ideal-rewires](https://github.com/harrysolovay/ideal-rewires) by [@harrysolovay](https://github.com/harrysolovay)
 * [react-app-rewire-yarn-workspaces](https://github.com/viewstools/yarn-workspaces-cra-crna/tree/master/react-app-rewire-yarn-workspaces) by [@viewstools](https://github.com/viewstools)
 
+# Development
+
+When developing this project, ensure you have [yarn](https://yarnpkg.com/en/docs/install) installed.
+
+## Quick Start
+To run the test app, navigate to the directory and run:
+
+```bash
+yarn setup
+yarn start
+```
+
+(when you are finished, run `yarn teardown` to clean up)
+
+## Commands
+Here is a list of all the avaliable commands to help you in development
+
+- `yarn setup` - installs dependences and links `test/react-app`
+- `yarn start` - starts the react app
+- `yarn build` - builds the react app
+- `yarn test` - tests the react app
+- `yarn teardown` - unlinks `test/react-app` and removes dependencies
+
 # Why This Project Exists
 
 See: [Create React App — But I don’t wanna Eject.](https://medium.com/@timarney/but-i-dont-wanna-eject-3e3da5826e39#.x81bb4kji)
