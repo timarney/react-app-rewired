@@ -150,8 +150,13 @@ module.exports = {
 
       // Return your customised Webpack Development Server config.
       return config;
-    }
-  }
+    },
+  },
+  // The paths config to use when compiling your react app for development or production.
+  paths: function(paths, env) {
+    // ...add your paths config
+    return paths;
+  },
 }
 ```
 
@@ -174,7 +179,10 @@ Instead of this, create-react-app expects to be able to call a function to gener
 
 React-app-rewired provides the ability to override this function through use of the `devServer` field in the module.exports object in `config-overrides.js`. It provides the devServer function a single parameter containing the default create-react-app function that is normally used to generate the dev server config (it cannot provide a generated version of the configuration because react-scripts is calling the generation function directly). React-app-rewired needs to receive as a return value a _replacement function_ for create-react-app to then use to generate the Development Server configuration (i.e. the return value should be a new function that takes the two parameters for proxy and allowedHost and itself returns a Webpack Development Server configuration). The original react-scripts function is passed into the `config-overrides.js` devServer function so that you are able to easily call this yourself to generate your initial devServer configuration based on what the defaults used by create-react-app are.
 
-#### 4) Provide rewired webpack config for 3rd party tools
+#### 4) Paths configuration - Development & Production
+The `paths` field is used to provide overrides for the `create-react-app` paths passed into webpack and jest.
+
+#### 5) Provide rewired webpack config for 3rd party tools
 Some third party tools, like [`react-cosmos`](https://github.com/react-cosmos/react-cosmos) relies on your webpack config.
 You can create `webpack.config.js` file and export rewired config using following snippet:
 ```js

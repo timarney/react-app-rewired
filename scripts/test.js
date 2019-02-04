@@ -1,10 +1,16 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'test';
 
 const path = require("path");
-const paths = require("./utils/paths");
+let paths = require("./utils/paths");
 const overrides = require('../config-overrides');
 const rewireJestConfig = require("./utils/rewireJestConfig");
 const createJestConfigPath = paths.scriptVersion + "/scripts/utils/createJestConfig";
+
+const pathsConfigPath = `${paths.scriptVersion}/config/paths.js`;
+const pathsConfig = require(pathsConfigPath);
+
+// extend paths with overrides
+paths = Object.assign({}, paths, overrides.paths(pathsConfig, process.env.NODE_ENV));
 
 // hide overrides in package.json for CRA's original createJestConfig
 const packageJson = require(paths.appPackageJson);
