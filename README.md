@@ -150,7 +150,7 @@ module.exports = {
 
       // Return your customised Webpack Development Server config.
       return config;
-    },
+    };
   },
   // The paths config to use when compiling your react app for development or production.
   paths: function(paths, env) {
