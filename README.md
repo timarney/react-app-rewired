@@ -41,8 +41,17 @@ or any of the alternative projects and forks that aim to support 2.0:
 
 
 #### 1) Install react-app-rewired
+
+##### For create-react-app 2.x with Webpack 4:
+
 ```bash
 $ npm install react-app-rewired --save-dev
+```
+
+##### For create-react-app 1.x or react-scripts-ts with Webpack 3:
+
+```bash
+$ npm install react-app-rewired@1.6.2 --save-dev
 ```
 
 #### 2) Create a `config-overrides.js` file in the root directory
@@ -66,7 +75,7 @@ module.exports = function override(config, env) {
 |   +-- src
 ```
 
-#### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts
+#### 3) 'Flip' the existing calls to `react-scripts` in `npm` scripts for start, build and test
 ```diff
   /* package.json */
 
@@ -76,9 +85,14 @@ module.exports = function override(config, env) {
 -   "build": "react-scripts build",
 +   "build": "react-app-rewired build",
 -   "test": "react-scripts test --env=jsdom",
-+   "test": "react-app-rewired test --env=jsdom"
++   "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
 }
 ```
+
+Note: Do NOT flip the call for the `eject` script.
+That gets run only once for a project, after which you are given full control over the webpack configuration making `react-app-rewired` no longer required.
+There are no configuration options to rewire for the `eject` script.
 
 #### 4) Start the Dev Server
 ```bash
@@ -223,10 +237,19 @@ A working example for using the scripts version option is:
 }
 ```
 
-React-app-rewired requires a custom react-scripts package to provide the following files:
+##### React-app-rewired 2.x requires a custom react-scripts package to provide the following files:
 * config/env.js
-* config/webpack.config.dev.js
-* config/webpack.config.prod.js
+* **config/webpack.config.js**
+* config/webpackDevServer.config.js
+* scripts/build.js
+* scripts/start.js
+* scripts/test.js
+* scripts/utils/createJestConfig.js
+
+##### React-app-rewired 1.x requires a custom react-scripts package to provide the following files:
+* config/env.js
+* **config/webpack.config.dev.js**
+* **config/webpack.config.prod.js**
 * config/webpackDevServer.config.js
 * scripts/build.js
 * scripts/start.js

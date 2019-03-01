@@ -30,5 +30,12 @@
     "type": "git",
     "url": "git+https://github.com/timarney/react-app-rewired"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "/index.js",
+    "/config-overrides.js",
+    "/assets",
+    "/bin",
+    "/scripts"
+  ]
 }
