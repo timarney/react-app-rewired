@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 
 //try to detect if user is using a custom scripts version
-var custom_scripts = false;
+var custom_scripts = process.env.REACT_SCRIPTS_VERSION || false;
 const cs_index = process.argv.indexOf('--scripts-version');
 
 if (cs_index > -1 && cs_index + 1 <= process.argv.length) {
