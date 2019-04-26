@@ -1,4 +1,7 @@
-🚨Version 2.0 removes the rewire helper functions
+> ℹ️
+Before submitting an issue to this repo - Ensure it's a **issue with the code in this repo**, not a **how do I configure** something with **Webpack** question (post something on Stack Overflow or Spectrum).  It's your config you "own" it.
+
+- 🚨Version 2.0 removes the rewire helper functions
 
 [![npm version](https://img.shields.io/npm/v/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
 [![npm monthly downloads](https://img.shields.io/npm/dm/react-app-rewired.svg)](https://www.npmjs.com/package/react-app-rewired)
