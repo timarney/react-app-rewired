@@ -345,7 +345,7 @@ yarn start
 (when you are finished, run `yarn teardown` to clean up)
 
 ## Commands
-Here is a list of all the avaliable commands to help you in development
+Here is a list of all the available commands to help you in development
 
 - `yarn setup` - installs dependences and links `test/react-app`
 - `yarn start` - starts the react app
