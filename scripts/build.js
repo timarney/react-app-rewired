@@ -9,9 +9,15 @@ const scriptPkg = require(`${scriptVersion}/package.json`);
 // CRA 2.1.2 switched to using a webpack config factory
 // https://github.com/facebook/create-react-app/pull/5722
 // https://github.com/facebook/create-react-app/releases/tag/v2.1.2
-const isWebpackFactory = semver.gte(scriptPkg && scriptPkg.version, '2.1.2');
+let isWebpackFactory = semver.gte(scriptPkg && scriptPkg.version, '2.1.2');
 
-const webpackConfigPath = `${scriptVersion}/config/webpack.config${!isWebpackFactory ? '.prod' : ''}`;
+let webpackConfigPath = `${scriptVersion}/config/webpack.config`;
+try {
+  require.resolve(webpackConfigPath);
+  isWebpackFactory = true;
+} catch (err) {
+  webpackConfigPath += '.prod';
+}
 const webpackConfig = require(webpackConfigPath);
 
 // override config in memory
