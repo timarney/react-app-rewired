@@ -24,11 +24,11 @@ As of Create React App 2.0 this repo is "lightly" maintained mostly by the commu
 
 <hr>
 
-**注意:**我个人使用[next.js](https://github.com/zeit/next.js/) 或者 [Razzle](https://github.com/jaredpalmer/razzle) 都支持开箱即用的自定义Webpack。
+**注意:** 我个人使用[next.js](https://github.com/zeit/next.js/) 或者 [Razzle](https://github.com/jaredpalmer/razzle) 都支持开箱即用的自定义Webpack。
 
 ## 备选方案
 
-您可以尝试使用 [custom -cra](https://github.com/arackaf/customize-cra)来获得一组CRA 2.0兼容的重新布线器(a set of CRA 2.0 compatible rewirers)，或任何旨在支持2.0的替代项目和分支：
+您可以尝试使用 [custom -cra](https://github.com/arackaf/customize-cra)来获得一组CRA 2.0兼容的rewirers，或任何旨在支持2.0的替代项目和分支：
 - [Rescripts](https://github.com/rescripts/rescripts),用于扩展CRA配置的替代框架（支持2.0+）.
 - [react-scripts-rewired](https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md) 为该项目的一个分支，旨在支持CRA 2.0
 - [craco](https://github.com/sharegate/craco)
@@ -226,7 +226,7 @@ require('./index.tsx');
 
 #### 2) 自定义脚本版本
 `react-scripts`通过在命令行选项中指定脚本包的名称`--scripts-version`或`REACT_SCRIPTS_VERSION=<...>`通过环境进行设置，可以使用自定义版本的包和react-app-rewired 。
-It is possible to use a custom version of the `react-scripts` package with react-app-rewired by specifying the name of the scripts package in the command line option `--scripts-version` or setting `REACT_SCRIPTS_VERSION=<...>` via the environment.
+
 
 使用脚本版本选项的工作示例是：
 
@@ -345,7 +345,7 @@ yarn setup
 yarn start
 ```
 
-(当你结束时，可以通过运行 yarn teardown清理)
+( 当你结束时，可以通过运行 yarn teardown清理 )
 
 ## 命令
 以下列出了可帮助您进行开发的所有可用命令
