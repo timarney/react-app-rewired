@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var spawn = require('cross-spawn');
+var spawn = require('react-dev-utils/crossSpawn');
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(
