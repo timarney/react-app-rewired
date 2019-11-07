@@ -22,7 +22,7 @@ module.exports = (config) => {
           config[key] = overrides[key].concat(config[key]);
         }
         else if(typeof overrides[key] === 'object') {
-          config[key] = Object.assign({}, overrides[key], config[key]);
+          config[key] = Object.assign({}, config[key], overrides[key]);
         }
       } else {
         config[key] = overrides[key];
