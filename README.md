@@ -88,8 +88,8 @@ module.exports = function override(config, env) {
 +   "start": "react-app-rewired start",
 -   "build": "react-scripts build",
 +   "build": "react-app-rewired build",
--   "test": "react-scripts test --env=jsdom",
-+   "test": "react-app-rewired test --env=jsdom",
+-   "test": "react-scripts test",
++   "test": "react-app-rewired test",
     "eject": "react-scripts eject"
 }
 ```
@@ -235,7 +235,7 @@ A working example for using the scripts version option is:
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
-    "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
+    "test": "react-app-rewired test --scripts-version react-scripts-ts",
     "eject": "react-scripts eject"
   }
 }
