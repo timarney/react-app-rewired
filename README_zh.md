@@ -325,6 +325,7 @@ React-app-rewired 会导入您的 config-overrides.js 文件而不使用 “.js�
 * [react-app-rewired with Inferno](packages/react-app-rewired/examples/inferno.md)
 * [react-app-rewired with react-styleguideist](packages/react-app-rewired/examples/react-styleguidist.md)
 * [react-app-rewired with react-hot-loader](https://github.com/cdharris/react-app-rewire-hot-loader) by [@cdharris](https://github.com/cdharris)
+* [react-app-rewire-alias](https://github.com/oklas/react-app-rewire-alias) by [@oklas](https://github.com/oklas)
 * [react-app-rewire-aliases](https://github.com/aze3ma/react-app-rewire-aliases) by [@aze3ma](https://github.com/aze3ma)
 * [react-app-rewire-blockstack](https://github.com/harrysolovay/react-app-rewire-blockstack) by [@harrysolovay](https://github.com/harrysolovay)
 * [ideal-rewires](https://github.com/harrysolovay/ideal-rewires) by [@harrysolovay](https://github.com/harrysolovay)
