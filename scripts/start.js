@@ -25,7 +25,7 @@ const devServerConfig = require(devServerConfigPath);
 
 // override config in memory
 require.cache[require.resolve(webpackConfigPath)].exports = isWebpackFactory
-  ? (env) => overrides.webpack(webpackConfig(env), env)
+  ? (env, ...others) => overrides.webpack(webpackConfig(env, ...others), env, ...others)
   : overrides.webpack(webpackConfig, process.env.NODE_ENV);
 
 require.cache[require.resolve(devServerConfigPath)].exports =
