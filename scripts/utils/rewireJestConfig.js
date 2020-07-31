@@ -18,8 +18,17 @@ module.exports = (config) => {
       if(config[key]) {
         if(typeof overrides[key] === 'string') {
           config[key] = overrides[key];
-        } else if(Array.isArray(overrides[key])) {
-          config[key] = overrides[key].concat(config[key]);
+        } else if(Array.isArray(overrides[key])) {          
+          if (key === 'transformIgnorePatterns' && Array.isArray(config[key]) && config[key].length) {
+              const tIndex = config[key].findIndex((item) => {
+                  return item.includes('node_modules');
+              });
+              if (tIndex !== -1) {
+                  config[key].splice(tIndex, 1, `/node_modules/(?!(${jestExtLibs}))`);
+              }            
+          }else{
+              config[key] = overrides[key].concat(config[key]);
+          }
         }
         else if(typeof overrides[key] === 'object') {
           config[key] = Object.assign({}, config[key], overrides[key]);
