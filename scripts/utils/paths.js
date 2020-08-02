@@ -28,6 +28,10 @@ const modulePath = path.join(
   '..'
 );
 
+// load environment variables from .env files
+// before paths scripts are read
+require(modulePath + '/config/env');
+
 const paths = require(modulePath + '/config/paths');
 
 module.exports = Object.assign({
