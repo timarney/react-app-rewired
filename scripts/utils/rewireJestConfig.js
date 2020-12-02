@@ -15,7 +15,7 @@ module.exports = (config) => {
   Object.keys(overrides)
     .forEach(key => {
       //We don't overwrite the default config, but add to each property if not a string
-      if (config[key]) {
+      if(config[key]) {
         if(typeof overrides[key] === 'string' || typeof overrides[key] === 'number' || typeof overrides[key] === 'boolean') {
           config[key] = overrides[key];
         } else if(Array.isArray(overrides[key])) {
