@@ -1,4 +1,6 @@
-const babelJest = require('babel-jest');
+const { dependRequire, dependRequireResolve } = require('./dependRequire');
+
+const babelJest = dependRequire('babel-jest');
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
@@ -16,7 +18,7 @@ const hasJsxRuntime = (() => {
 module.exports = babelJest.createTransformer({
   presets: [
     [
-      require.resolve('babel-preset-react-app'),
+      dependRequireResolve('babel-preset-react-app'),
       {
         runtime: hasJsxRuntime ? 'automatic' : 'classic',
       },

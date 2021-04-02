@@ -7,7 +7,8 @@
  * For more information, see https://github.com/timarney/react-app-rewired/issues/182
  */
 
-const spawn = require('react-dev-utils/crossSpawn');
+const { dependRequire } = require('../scripts/utils/dependRequire');
+const spawn = dependRequire('react-dev-utils/crossSpawn');
 const args = process.argv.slice(2);
 
 // ignore --config param like it was never there
