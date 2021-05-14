@@ -16,11 +16,18 @@ module.exports = {
     return config;
   },
 
-  devServer: configFunction => (proxy, allowedHost) => {
-    const config = configFunction(proxy, allowedHost);
-    return config;
-  },
+  devServer: async configFunction => {
 
+    //call your awaitable methods here
+    const result = await Promise.resolve('do something async');
+    console.log(result);
+
+    return (proxy, allowedHost) => {
+      const config = configFunction(proxy, allowedHost);
+      //do something with result
+      return config;
+    }
+  },
   paths: (paths, env) => {
     return paths;
   }
