@@ -12,6 +12,10 @@ const pathsConfig = require(pathsConfigPath);
 // extend paths with overrides
 paths = Object.assign({}, paths, overrides.paths(pathsConfig, process.env.NODE_ENV));
 
+// override paths in memory
+require.cache[require.resolve(pathsConfigPath)].exports =
+  paths;
+
 // hide overrides in package.json for CRA's original createJestConfig
 const packageJson = require(paths.appPackageJson);
 const jestOverrides = packageJson.jest;
