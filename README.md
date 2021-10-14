@@ -283,6 +283,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-react-intl](https://github.com/clemencov/react-app-rewire-react-intl) by [@clemencov](https://github.com/clemencov)
 * [react-app-rewire-lingui](https://github.com/Andreyco/react-app-rewire-lingui) by [@andreyco](https://github.com/Andreyco)
 * [react-app-rewire-date-fns](https://github.com/stk-dmitry/react-app-rewire-date-fns) by [@stk-dmitry](https://github.com/stk-dmitry)
+* [react-app-rewired-esbuild](https://github.com/fupengl/react-app-rewired-esbuild) by [@fupengl](https://github.com/fupengl)
 
 ## Webpack plugins
 
