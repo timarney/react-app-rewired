@@ -49,13 +49,13 @@ or any of the alternative projects and forks that aim to support 2.0:
 ##### For create-react-app 2.x with Webpack 4:
 
 ```bash
-$ npm install react-app-rewired --save-dev
+npm install react-app-rewired --save-dev
 ```
 
 ##### For create-react-app 1.x or react-scripts-ts with Webpack 3:
 
 ```bash
-$ npm install react-app-rewired@1.6.2 --save-dev
+npm install react-app-rewired@1.6.2 --save-dev
 ```
 
 #### 2) Create a `config-overrides.js` file in the root directory
@@ -100,13 +100,13 @@ There are no configuration options to rewire for the `eject` script.
 
 #### 4) Start the Dev Server
 ```bash
-$ npm start
+npm start
 ```
 
 
 #### 5) Build your app
 ```bash
-$ npm run build
+npm run build
 ```
 
 ## Extended Configuration Options
