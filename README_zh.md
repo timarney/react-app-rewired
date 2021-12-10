@@ -25,7 +25,7 @@
 
 ## 备选方案
 
-您可以尝试使用 [custom -cra](https://github.com/arackaf/customize-cra) 来获得一组 CRA 2.0兼容的 rewirers，或任何旨在支持2.0的替代项目和分支：
+您可以尝试使用 [customize-cra](https://github.com/arackaf/customize-cra) 来获得一组 CRA 2.0兼容的 rewirers，或任何旨在支持2.0的替代项目和分支：
 - [Rescripts](https://github.com/rescripts/rescripts)，用于扩展 CRA 配置的替代框架（支持2.0+）
 - [react-scripts-rewired](https://github.com/marcopeg/create-react-app/blob/master/packages/react-scripts/README.md) 为该项目的一个分支，旨在支持 CRA 2.0
 - [craco](https://github.com/sharegate/craco)
