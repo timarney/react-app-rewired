@@ -16,6 +16,7 @@
     "deps": "yarn && yarn --cwd 'test/react-app'"
   },
   "peerDependencies": {
+    "babel-jest": "<27.0.0",
     "react-scripts": ">=2.1.3"
   },
   "dependencies": {
