@@ -1,4 +1,5 @@
-const babelJest = require('babel-jest');
+const babelJestMd = require('babel-jest');
+const babelJest = babelJestMd.__esModule ? babelJestMd.default : babelJestMd;
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
