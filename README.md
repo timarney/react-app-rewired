@@ -49,13 +49,13 @@ or any of the alternative projects and forks that aim to support 2.0:
 ##### For create-react-app 2.x with Webpack 4:
 
 ```bash
-$ npm install react-app-rewired --save-dev
+npm install react-app-rewired --save-dev
 ```
 
 ##### For create-react-app 1.x or react-scripts-ts with Webpack 3:
 
 ```bash
-$ npm install react-app-rewired@1.6.2 --save-dev
+npm install react-app-rewired@1.6.2 --save-dev
 ```
 
 #### 2) Create a `config-overrides.js` file in the root directory
@@ -100,13 +100,13 @@ There are no configuration options to rewire for the `eject` script.
 
 #### 4) Start the Dev Server
 ```bash
-$ npm start
+npm start
 ```
 
 
 #### 5) Build your app
 ```bash
-$ npm run build
+npm run build
 ```
 
 ## Extended Configuration Options
@@ -283,6 +283,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-react-intl](https://github.com/clemencov/react-app-rewire-react-intl) by [@clemencov](https://github.com/clemencov)
 * [react-app-rewire-lingui](https://github.com/Andreyco/react-app-rewire-lingui) by [@andreyco](https://github.com/Andreyco)
 * [react-app-rewire-date-fns](https://github.com/stk-dmitry/react-app-rewire-date-fns) by [@stk-dmitry](https://github.com/stk-dmitry)
+* [react-app-rewired-esbuild](https://github.com/fupengl/react-app-rewired-esbuild) by [@fupengl](https://github.com/fupengl)
 
 ## Webpack plugins
 
@@ -316,6 +317,7 @@ If you need to change the location of your config-overrides.js you can pass a co
 * [react-app-rewire-svgr](https://github.com/gitim/react-app-rewire-svgr) by [@gitim](https://github.com/gitim)
 * [react-app-rewire-yaml](https://github.com/hsz/react-app-rewire-yaml) by [@hsz](https://github.com/hsz)
 * [react-app-rewire-scss](https://github.com/aze3ma/react-app-rewire-scss) by [@aze3ma](https://github.com/aze3ma)
+* [react-app-rewire-scss-loaders](https://github.com/iSanchezDev/react-app-rewire-scss-loaders) by [@isanchez](https://github.com/isanchezdev)
 * [react-app-rewire-external-svg-loader](https://github.com/moxystudio/react-app-rewire-external-svg-loader) by [@moxystudio](https://github.com/moxystudio)
 * [react-app-rewire-typings-for-css-module](https://github.com/rainx/react-app-rewire-typings-for-css-module) by [@rainx](https://github.com/rainx)
 

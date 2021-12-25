@@ -1,6 +1,7 @@
 const { dependRequire, dependRequireResolve } = require('./dependRequire');
 
-const babelJest = dependRequire('babel-jest');
+const babelJestMd = dependRequire('babel-jest');
+const babelJest = babelJestMd.__esModule ? babelJestMd.default : babelJestMd;
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
