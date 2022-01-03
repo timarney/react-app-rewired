@@ -1,8 +1,8 @@
-const path = require("path");
-const paths = require("./paths");
+const path = require('path');
+const paths = require('./paths');
 const overrides = require('../config-overrides');
-const rewireJestConfig = require("../scripts/utils/rewireJestConfig");
-const createJestConfigPath = paths.scriptVersion + "/scripts/utils/createJestConfig";
+const rewireJestConfig = require('../scripts/utils/rewireJestConfig');
+const createJestConfigPath = `${paths.scriptVersion}/scripts/utils/createJestConfig`;
 
 // hide overrides in package.json for CRA's original createJestConfig
 const packageJson = require(paths.appPackageJson);
@@ -12,8 +12,8 @@ delete packageJson.jest;
 const createJestConfig = require(createJestConfigPath);
 // run original createJestConfig
 const config = createJestConfig(
-	relativePath => path.resolve(paths.appPath, "node_modules", paths.scriptVersion, relativePath),
-	path.resolve(paths.appSrc, ".."),
+	relativePath => path.resolve(paths.appPath, 'node_modules', paths.scriptVersion, relativePath),
+	path.resolve(paths.appSrc, '..'),
 	false
 );
 // restore overrides for rewireJestConfig
