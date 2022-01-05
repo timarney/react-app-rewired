@@ -4,13 +4,6 @@ const { scriptVersion } = require('../scripts/utils/paths');
 const overrides = require('../config-overrides');
 const scriptPkg = require(`${scriptVersion}/package.json`);
 
-const pathsConfigPath = `${scriptVersion}/config/paths.js`;
-const pathsConfig = require(pathsConfigPath);
-
-// override paths in memory
-require.cache[require.resolve(pathsConfigPath)].exports =
-	overrides.paths(pathsConfig, process.env.NODE_ENV);
-
 // CRA 2.1.2 switched to using a webpack config factory
 // https://github.com/facebook/create-react-app/pull/5722
 // https://github.com/facebook/create-react-app/releases/tag/v2.1.2
