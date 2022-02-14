@@ -34,6 +34,7 @@
     "/config-overrides.js",
     "/assets",
     "/bin",
+    "/overrides",
     "/scripts"
   ]
 }
