@@ -21,11 +21,14 @@ packageJson.jest = jestOverrides;
 // override createJestConfig in memory
 require.cache[require.resolve(createJestConfigPath)].exports =
 	() => overrides.jest(rewireJestConfig(config));
-// Passing the --scripts-version on to the original test script can result
+// Passing the --scripts-version and --config-overrides on to the original test script can result
 // in the test script rejecting it as an invalid option. So strip it out of
 // the command line arguments before invoking the test script.
 if (paths.customScriptsIndex > -1) {
 	process.argv.splice(paths.customScriptsIndex, 2);
+}
+if (paths.configOverridesIndex > -1) {
+	process.argv.splice(paths.configOverridesIndex, 2);
 }
 
 module.exports = require(createJestConfigPath);
