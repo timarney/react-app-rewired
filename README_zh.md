@@ -331,6 +331,7 @@ React-app-rewired 会导入您的 config-overrides.js 文件而不使用 “.js�
 * [react-app-rewire-blockstack](https://github.com/harrysolovay/react-app-rewire-blockstack) by [@harrysolovay](https://github.com/harrysolovay)
 * [ideal-rewires](https://github.com/harrysolovay/ideal-rewires) by [@harrysolovay](https://github.com/harrysolovay)
 * [react-app-rewire-yarn-workspaces](https://github.com/viewstools/yarn-workspaces-cra-crna/tree/master/react-app-rewire-yarn-workspaces) by [@viewstools](https://github.com/viewstools)
+* [react-app-rewired-single-spa](https://github.com/fupengl/react-app-rewired-single-spa) by [@fupengl](https://github.com/fupengl)
 
 # 开发
 
